@@ -867,7 +867,6 @@
 
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // ── Build the bar chart ──
   const data = [
     { year: '2009', value: 18 },
     { year: '2010', value: 199 },
@@ -898,7 +897,6 @@
     container.appendChild(group);
   });
 
-  // Year labels row
   const labelRow = document.createElement('div');
   labelRow.style.cssText = 'display:flex;gap:10px;justify-content:center;margin-top:8px;max-width:100%;';
   data.forEach(d => {
@@ -907,4 +905,10 @@
     lbl.textContent = d.year;
     labelRow.appendChild(lbl);
   });
- 
+  const chartWrapper = document.querySelector('.chart-wrapper');
+  const credit = document.querySelector('.chart-credit');
+  chartWrapper.insertBefore(labelRow, credit);
+</script>
+
+</body>
+</html>
