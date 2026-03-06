@@ -679,6 +679,7 @@
     <a class="nav-btn" href="#cyber">Cyber Attacks</a>
     <a class="nav-btn" href="#analysis">Analysis</a>
     <a class="nav-btn" href="#faqs">FAQs</a>
+    <a class="nav-btn" href="#methodology">Methodology</a>
     <a class="nav-btn" href="#bibliography">Bibliography</a>
   </div>
 </nav>
@@ -833,6 +834,233 @@
   </div>
 </section>
 
+
+<!-- ═══════════════════════════════════════════
+     SECTION 7: DATA & METHODOLOGY
+════════════════════════════════════════════ -->
+<section id="methodology">
+  <div class="methodology-header">
+    <h2>Data &amp; Methodology</h2>
+    <p>Explore the variables and datasets that power the Medical Security Index</p>
+  </div>
+
+  <div class="accordion-grid">
+
+    <div class="accordion-item">
+      <button class="accordion-btn" onclick="toggleAccordion(this)">
+        <span>Project Overview</span>
+        <span class="accordion-arrow">&#9660;</span>
+      </button>
+      <div class="accordion-content">
+        <p>The Medical Security Index (MSI) is a data visualization project designed to examine how armed conflict affects access to essential healthcare services. The project integrates datasets on conflict intensity, healthcare system capacity, maternal care access, population vulnerability, and displacement to identify structural health risks in conflict-affected countries.</p>
+        <p>Rather than relying on a single indicator, the MSI framework combines multiple variables to illustrate how conflict interacts with health system capacity and population vulnerability.</p>
+        <p>All data are standardized at the country level and mapped using global datasets.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-btn" onclick="toggleAccordion(this)">
+        <span>Conflict Deaths per 100k</span>
+        <span class="accordion-arrow">&#9660;</span>
+      </button>
+      <div class="accordion-content">
+        <p>Conflict deaths were sourced from the <u>Uppsala Conflict Data Program (UCDP) Country-Year Dataset on Organized Violence within Country Borders</u>.</p>
+        <p>This variable records the best estimate of battle-related deaths in state-based armed conflicts occurring within a country during the specified year.</p>
+        <p>Conflict fatalities were normalized relative to population size to produce a comparable metric across countries.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-btn" onclick="toggleAccordion(this)">
+        <span>Population Data</span>
+        <span class="accordion-arrow">&#9660;</span>
+      </button>
+      <div class="accordion-content">
+        <p>Population data used for standardization were sourced from the <u>World Health Organization country data portal</u>.</p>
+        <p>Population estimates allow conflict and displacement indicators to be normalized per population size, enabling comparisons between countries with very different population levels.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-btn" onclick="toggleAccordion(this)">
+        <span>Years of Sustained Conflict</span>
+        <span class="accordion-arrow">&#9660;</span>
+      </button>
+      <div class="accordion-content">
+        <p>To measure the structural persistence of conflict, the project calculates years of sustained conflict between 2015–2024, sourced from the <u>Uppsala Conflict Data Program (UCDP) Country-Year Dataset on Organized Violence within Country Borders</u>.</p>
+        <p>The years do not need to be continuous, and the threshold of 25 deaths per year follows the standard definition used in conflict datasets to indicate an active conflict year. This metric helps distinguish between countries experiencing persistent violence and those simply experiencing isolated events.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-btn" onclick="toggleAccordion(this)">
+        <span>Hospital Beds per 1k</span>
+        <span class="accordion-arrow">&#9660;</span>
+      </button>
+      <div class="accordion-content">
+        <p>Healthcare capacity indicators were obtained from the <u>World Bank World Development Indicators database</u>.</p>
+        <p>This indicator measures the density of hospital beds available in a country's healthcare system and shows the system capacity to respond to health emergencies and conflict-related demand.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-btn" onclick="toggleAccordion(this)">
+        <span>Skilled Birth Attendance %</span>
+        <span class="accordion-arrow">&#9660;</span>
+      </button>
+      <div class="accordion-content">
+        <p>Maternal healthcare access was measured using the <u>World Bank World Development Indicators database</u>.</p>
+        <p>This metric measures the percentage of births attended by trained health professionals and can be used as a proxy for baseline access to essential healthcare services.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-btn" onclick="toggleAccordion(this)">
+        <span>IDPs per 100k</span>
+        <span class="accordion-arrow">&#9660;</span>
+      </button>
+      <div class="accordion-content">
+        <p>Displacement data were sourced from the <u>Internal Displacement Monitoring Centre (IDMC) Global Internal Displacement Database</u>.</p>
+        <p>This value represents the total number of people internally displaced due to conflict and violence who remain displaced within a country at the end of the reporting year (2024).</p>
+        <p>To standardize displacement data across countries with different population sizes, IDPs per 100,000 population were calculated.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-btn" onclick="toggleAccordion(this)">
+        <span>Population Under 15</span>
+        <span class="accordion-arrow">&#9660;</span>
+      </button>
+      <div class="accordion-content">
+        <p>Population age structure data were sourced from the <u>World Bank World Development Indicators database</u>.</p>
+        <p>This metric provides an approximation of the share of the population composed of children and adolescents, who are generally more vulnerable to disruptions in healthcare access during conflict.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-btn" onclick="toggleAccordion(this)">
+        <span>Health System Stress Flag</span>
+        <span class="accordion-arrow">&#9660;</span>
+      </button>
+      <div class="accordion-content">
+        <p>The Health System Stress Flag (HSSF) is a proprietary indicator developed by the Medical Security Index (MSI) project to identify countries where conflict conditions are likely placing structural pressure on healthcare systems.</p>
+        <p>While many existing global indices measure conflict or healthcare capacity independently, the HSSF was designed to capture the interaction between conflict exposure and healthcare system resilience.</p>
+        <p>The indicator evaluates each country across six risk dimensions derived from the MSI dataset, including: conflict deaths per 100k, years of sustained conflict, hospital beds per 1k, skilled birth attendance percent, population under fifteen years old, and IDPs per 100k.</p>
+        <p>More details on the calculations of HSSF values will be released in later reports, and any additional questions can be answered by contacting our research team.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  #methodology {
+    background: linear-gradient(180deg, #1565c0 0%, #4fc3f7 60%, #e0f4ff 100%);
+    padding: 100px 40px 80px;
+    min-height: 100vh;
+  }
+
+  .methodology-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .methodology-header h2 {
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 900;
+    color: #fff;
+    font-family: 'Arial Black', 'Arial', sans-serif;
+    margin-bottom: 10px;
+  }
+
+  .methodology-header p {
+    font-size: 15px;
+    color: #fff;
+  }
+
+  .accordion-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .accordion-item {
+    width: 100%;
+  }
+
+  .accordion-btn {
+    width: 100%;
+    background: #fff;
+    color: #111;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 22px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Arial', sans-serif;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    transition: background 0.2s;
+  }
+
+  .accordion-btn:hover {
+    background: #f0f0f0;
+  }
+
+  .accordion-arrow {
+    font-size: 12px;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+    margin-left: 12px;
+  }
+
+  .accordion-btn.open .accordion-arrow {
+    transform: rotate(180deg);
+  }
+
+  .accordion-content {
+    display: none;
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+    padding: 18px 22px;
+    border-top: 1px solid #e0e0e0;
+    margin-top: -4px;
+  }
+
+  .accordion-content p {
+    font-size: 13.5px;
+    color: #222;
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+
+  .accordion-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .accordion-item.open .accordion-btn {
+    border-radius: 8px 8px 0 0;
+    background: #f7f7f7;
+  }
+
+  .accordion-item.open .accordion-content {
+    display: block;
+  }
+</style>
+
+<script>
+  function toggleAccordion(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    item.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+  }
+</script>
 
 <!-- ═══════════════════════════════════════════
      BIBLIOGRAPHY (not in scroll flow)
