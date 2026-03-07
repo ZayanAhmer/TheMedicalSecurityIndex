@@ -83,6 +83,37 @@
 
     .nav-btn:hover { background: #2d3e5a; }
 
+    @media (max-width: 768px) {
+      .ecg-bar { height: 28px; }
+      .nav-row {
+        padding: 4px 8px 5px 8px;
+        gap: 4px;
+      }
+      .nav-brand {
+        font-size: 11px;
+        margin-right: 4px;
+      }
+      .nav-btn {
+        padding: 4px 8px;
+        font-size: 10px;
+        border-radius: 12px;
+      }
+      #hero {
+        padding-top: 160px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-brand { display: none; }
+      .nav-btn {
+        padding: 3px 7px;
+        font-size: 9px;
+      }
+      #hero {
+        padding-top: 120px;
+      }
+    }
+
     /* ─── SECTIONS ─── */
     section {
       min-height: 100vh;
