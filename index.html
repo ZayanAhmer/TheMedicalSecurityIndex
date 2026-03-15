@@ -1219,6 +1219,23 @@
       100% { transform: translateX(0); }
     }
 
+    
+    /* iOS fix: insta-link wave-letters in content-overlay */
+    #content-overlay .insta-link .wave-letter {
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+      -webkit-text-fill-color: transparent;
+      animation: letterWave 3.5s ease-in-out infinite;
+      color: transparent;
+    }
+
+    #content-overlay .insta-link {
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
     </style>
 </head>
 <body>
@@ -1322,7 +1339,7 @@
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.326 3.608 1.301.975.975 1.24 2.242 1.301 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.326 2.633-1.301 3.608-.975.975-2.242 1.24-3.608 1.301-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.326-3.608-1.301-.975-.975-1.24-2.242-1.301-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.326-2.633 1.301-3.608C4.509 2.489 5.776 2.225 7.142 2.163 8.408 2.105 8.788 2.163 12 2.163zm0-2.163c-3.259 0-3.667.014-4.947.072-1.52.069-2.979.374-4.066 1.461C1.9 2.62 1.595 4.079 1.526 5.599 1.468 6.879 1.454 7.287 1.454 12c0 4.713.014 5.121.072 6.401.069 1.52.374 2.979 1.461 4.066 1.087 1.087 2.546 1.392 4.066 1.461 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.52-.069 2.979-.374 4.066-1.461 1.087-1.087 1.392-2.546 1.461-4.066.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.069-1.52-.374-2.979-1.461-4.066C19.946 1.9 18.487 1.595 16.967 1.526 15.687 1.468 15.279 1.454 12 1.454zM12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
       </svg>
-      <a href="https://www.instagram.com/themedicalsecurityindex?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" target="_blank" class="insta-link"><span class="wave-letter" style="animation-delay:0.0s">@</span><span class="wave-letter" style="animation-delay:0.07s">t</span><span class="wave-letter" style="animation-delay:0.14s">h</span><span class="wave-letter" style="animation-delay:0.21s">e</span><span class="wave-letter" style="animation-delay:0.28s">m</span><span class="wave-letter" style="animation-delay:0.35s">e</span><span class="wave-letter" style="animation-delay:0.42s">d</span><span class="wave-letter" style="animation-delay:0.49s">i</span><span class="wave-letter" style="animation-delay:0.56s">c</span><span class="wave-letter" style="animation-delay:0.63s">a</span><span class="wave-letter" style="animation-delay:0.7s">l</span><span class="wave-letter" style="animation-delay:0.77s">s</span><span class="wave-letter" style="animation-delay:0.84s">e</span><span class="wave-letter" style="animation-delay:0.91s">c</span><span class="wave-letter" style="animation-delay:0.98s">u</span><span class="wave-letter" style="animation-delay:1.05s">r</span><span class="wave-letter" style="animation-delay:1.12s">i</span><span class="wave-letter" style="animation-delay:1.19s">t</span><span class="wave-letter" style="animation-delay:1.26s">y</span><span class="wave-letter" style="animation-delay:1.33s">i</span><span class="wave-letter" style="animation-delay:1.4s">n</span><span class="wave-letter" style="animation-delay:1.47s">d</span><span class="wave-letter" style="animation-delay:1.54s">e</span><span class="wave-letter" style="animation-delay:1.61s">x</span></a>
+      <a href="https://www.instagram.com/themedicalsecurityindex?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" target="_blank" class="insta-link">@themedicalsecurityindex</a>
     </div>
   </div>
     </div>
