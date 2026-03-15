@@ -89,8 +89,9 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       display: flex;
-      align-items: flex-start;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
       padding-top: 8vh;
       z-index: 10;
       pointer-events: none;
@@ -170,6 +171,7 @@
       z-index: 9999;
       background: #ffffff;
       border-bottom: 1px solid #444;
+      overflow: visible;
     }
 
     .nav-row {
@@ -179,8 +181,7 @@
       padding: 6px 18px 8px 18px;
       gap: 6px;
       flex-wrap: wrap;
-      overflow-x: hidden;
-      -webkit-overflow-scrolling: touch;
+      overflow: visible;
       scrollbar-width: none;
     }
 
@@ -201,6 +202,8 @@
     }
 
     .nav-btn {
+      position: relative;
+      overflow: visible;
       background: none;
       color: #181618;
       border: none;
@@ -679,17 +682,19 @@
     }
 
     .faq-item h4 {
-      font-size: 20px;
-      font-weight: 700;
+      font-size: 14px;
+      font-weight: 900;
       color: #ffffff;
       margin-bottom: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       font-family: 'PT Mono', monospace;
     }
 
     .faq-item p {
-      font-size: 16px;
-      color: #ffffff;
-      line-height: 1.65;
+      font-size: 14px;
+      color: rgba(255,255,255,0.95);
+      line-height: 1.75;
     }
 
     .faqs-footer {
@@ -1165,11 +1170,24 @@
     }
 
     .faq-item {
-      background: #808080;
-      border-radius: 14px;
-      padding: 28px 28px 24px;
+      background: #3a3a3a;
+      border-radius: 12px;
+      padding: 24px 24px 22px;
       max-width: none;
       margin: 0;
+      box-shadow: 6px 6px 18px rgba(0,0,0,0.5);
+      position: relative;
+    }
+
+    .faq-item::before {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ff5f57;
+      box-shadow: 20px 0 0 #febc2e, 40px 0 0 #28c840;
+      margin-bottom: 18px;
     }
 
     @media (max-width: 768px) {
@@ -1181,11 +1199,11 @@
     
     /* ─── FAQ BOX SCROLL ANIMATION ─── */
     #faq-1, #faq-3, #faq-5 {
-      transform: translateX(-110vw);
+      transform: translateX(-35vw);
       opacity: 1;
     }
     #faq-2, #faq-4, #faq-6 {
-      transform: translateX(110vw);
+      transform: translateX(35vw);
       opacity: 1;
     }
       20%  { transform: translateX(-6px); }
@@ -1200,6 +1218,7 @@
       80%  { transform: translateX(-2px); }
       100% { transform: translateX(0); }
     }
+
     </style>
 </head>
 <body>
@@ -1234,14 +1253,14 @@
 <nav id="main-nav">
   <div class="nav-row">
     <a class="nav-brand" href="#" style="background:linear-gradient(90deg,#ff2200,#cc0000,#550000,#cc0000,#ff2200);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:instaGradient 2s ease infinite;" onclick="navTo('hero'); return false;" style="opacity:0;animation:navItemIn 0.6s cubic-bezier(0.22,1,0.36,1) 0.1s forwards;"><span class="wave-letter" style="animation-delay:0.0s">H</span><span class="wave-letter" style="animation-delay:0.07s">e</span><span class="wave-letter" style="animation-delay:0.14s">a</span><span class="wave-letter" style="animation-delay:0.21s">l</span><span class="wave-letter" style="animation-delay:0.28s">i</span><span class="wave-letter" style="animation-delay:0.35s">n</span><span class="wave-letter" style="animation-delay:0.42s">g</span> <span class="wave-letter" style="animation-delay:0.49s">C</span><span class="wave-letter" style="animation-delay:0.56s">a</span><span class="wave-letter" style="animation-delay:0.63s">n</span><span class="wave-letter" style="animation-delay:0.7s">'</span><span class="wave-letter" style="animation-delay:0.77s">t</span> <span class="wave-letter" style="animation-delay:0.84s">H</span><span class="wave-letter" style="animation-delay:0.91s">a</span><span class="wave-letter" style="animation-delay:0.98s">p</span><span class="wave-letter" style="animation-delay:1.05s">p</span><span class="wave-letter" style="animation-delay:1.12s">e</span><span class="wave-letter" style="animation-delay:1.19s">n</span> <span class="wave-letter" style="animation-delay:1.26s">U</span><span class="wave-letter" style="animation-delay:1.33s">n</span><span class="wave-letter" style="animation-delay:1.4s">d</span><span class="wave-letter" style="animation-delay:1.47s">e</span><span class="wave-letter" style="animation-delay:1.54s">r</span> <span class="wave-letter" style="animation-delay:1.61s">A</span><span class="wave-letter" style="animation-delay:1.68s">t</span><span class="wave-letter" style="animation-delay:1.75s">t</span><span class="wave-letter" style="animation-delay:1.82s">a</span><span class="wave-letter" style="animation-delay:1.89s">c</span><span class="wave-letter" style="animation-delay:1.96s">k</span><span class="wave-letter" style="animation-delay:2.03s">.</span></a>
-    <a class="nav-btn" href="#" onclick="navTo('mission'); return false;" style="opacity:0;animation:navItemIn 0.6s cubic-bezier(0.22,1,0.36,1) 0.18s forwards;">Our Mission</a>
-    <a class="nav-btn" href="#" onclick="navTo('conflict-map'); return false;" style="opacity:0;animation:navItemIn 0.6s cubic-bezier(0.22,1,0.36,1) 0.26s forwards;">Conflict Map</a>
-    <a class="nav-btn" href="#" onclick="navTo('cyber'); return false;" style="opacity:0;animation:navItemIn 0.6s cubic-bezier(0.22,1,0.36,1) 0.34s forwards;">Cyber Attacks</a>
-    <a class="nav-btn" href="#" onclick="navTo('analysis'); return false;" style="opacity:0;animation:navItemIn 0.6s cubic-bezier(0.22,1,0.36,1) 0.42s forwards;">Analysis</a>
-    <a class="nav-btn" href="#" onclick="navTo('faqs'); return false;" style="opacity:0;animation:navItemIn 0.6s cubic-bezier(0.22,1,0.36,1) 0.5s forwards;">FAQs</a>
-    <a class="nav-btn" href="#" onclick="navTo('socials'); return false;" style="opacity:0;animation:navItemIn 0.6s cubic-bezier(0.22,1,0.36,1) 0.74s forwards;">Socials</a>
-    <a class="nav-btn" href="#" onclick="navTo('methodology'); return false;" style="opacity:0;animation:navItemIn 0.6s cubic-bezier(0.22,1,0.36,1) 0.58s forwards;">Methodology</a>
-    <a class="nav-btn" href="#" onclick="navTo('bibliography'); return false;" style="opacity:0;animation:navItemIn 0.6s cubic-bezier(0.22,1,0.36,1) 0.66s forwards;">Sources</a>
+    <a class="nav-btn" data-emoji="🎯" href="#" onclick="navTo('mission'); return false;" style="opacity:0;animation:navItemIn 0.6s cubic-bezier(0.22,1,0.36,1) 0.18s forwards;">Our Mission</a>
+    <a class="nav-btn" data-emoji="🗺️" href="#" onclick="navTo('conflict-map'); return false;" style="opacity:0;animation:navItemIn 0.6s cubic-bezier(0.22,1,0.36,1) 0.26s forwards;">Conflict Map</a>
+    <a class="nav-btn" data-emoji="📊" href="#" onclick="navTo('cyber'); return false;" style="opacity:0;animation:navItemIn 0.6s cubic-bezier(0.22,1,0.36,1) 0.34s forwards;">Cyber Attacks</a>
+    <a class="nav-btn" data-emoji="🔍" href="#" onclick="navTo('analysis'); return false;" style="opacity:0;animation:navItemIn 0.6s cubic-bezier(0.22,1,0.36,1) 0.42s forwards;">Analysis</a>
+    <a class="nav-btn" data-emoji="❓" href="#" onclick="navTo('faqs'); return false;" style="opacity:0;animation:navItemIn 0.6s cubic-bezier(0.22,1,0.36,1) 0.5s forwards;">FAQs</a>
+    <a class="nav-btn" data-emoji="📱" href="#" onclick="navTo('socials'); return false;" style="opacity:0;animation:navItemIn 0.6s cubic-bezier(0.22,1,0.36,1) 0.74s forwards;">Socials</a>
+    <a class="nav-btn" data-emoji="🔢" href="#" onclick="navTo('methodology'); return false;" style="opacity:0;animation:navItemIn 0.6s cubic-bezier(0.22,1,0.36,1) 0.58s forwards;">Methodology</a>
+    <a class="nav-btn" data-emoji="🔗" href="#" onclick="navTo('bibliography'); return false;" style="opacity:0;animation:navItemIn 0.6s cubic-bezier(0.22,1,0.36,1) 0.66s forwards;">Sources</a>
 
   </div>
 </nav>
@@ -1294,7 +1313,7 @@
     <!-- Content overlay (fades in as dots disappear) -->
     <div id="content-overlay">
 <p class="subtitle reveal" style="margin-bottom:20px;color:#ffffff;">An independent research initiative measuring how armed conflict, displacement, and attacks on healthcare systems threaten medical access and strain national health infrastructure.</p>
-  <p style="font-size:clamp(12px,1.2vw,15px);color:#ffffff;max-width:680px;margin:0 auto 30px;line-height:1.6;text-align:center;">The Medical Security Index is an independent research project using publicly available datasets to model healthcare system pressure in conflict-ridden areas.</p>
+  <p style="font-size:clamp(12px,1.2vw,15px);color:#ffffff;max-width:680px;margin:0 auto 30px;line-height:1.6;text-align:center;">Using publicly available datasets to model healthcare system pressure in conflict-affected regions.</p>
 
   <div class="hero-footer">
     <p class="tagline reveal">Healing Can't Happen Under Attack.</p>
@@ -1463,7 +1482,7 @@
   <div class="faqs-footer" style="text-align:center;border-top:1px solid rgba(255,255,255,0.2);padding-top:40px;padding-bottom:0;margin-bottom:80px;">
 
     <p class="tagline" style="background:linear-gradient(90deg,#ff2200,#cc0000,#550000,#cc0000,#ff2200);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:instaGradient 8s ease infinite;">Healing Can't Happen Under Attack.</p>
-    <a class="bib-btn" href="#" onclick="navTo('bibliography'); return false;"><span class="wave-letter" style="animation-delay:0.0s">S</span><span class="wave-letter" style="animation-delay:0.07s">o</span><span class="wave-letter" style="animation-delay:0.14s">u</span><span class="wave-letter" style="animation-delay:0.21s">r</span><span class="wave-letter" style="animation-delay:0.28s">c</span><span class="wave-letter" style="animation-delay:0.35s">e</span><span class="wave-letter" style="animation-delay:0.42s">s</span></a>
+    
     </div>
 
 
@@ -1962,6 +1981,23 @@ window.addEventListener('load', function() {
   }
 
   var rotY = 0, isDragging = false, prevX = 0, velocity = 0.003;
+
+  // Sparkle particles for title underline
+  var sparkles = [];
+  function newSparkle(lx, lineW, lineY, tA) {
+    return {
+      x: lx + Math.random() * lineW,
+      y: lineY + Math.random() * 4,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() * 0.9 + 0.35),  // trickle DOWN
+      r: Math.random() * 1.4 + 0.4,
+      life: 0,
+      maxLife: Math.random() * 130 + 90,
+      star: Math.random() > 0.6,
+      maxAlpha: Math.random() * 0.75 + 0.25
+    };
+  }
+  // sparkles initialized lazily in draw()
   var scrollProgress = 0;
 
   // Scroll handling
@@ -2055,6 +2091,93 @@ window.addEventListener('load', function() {
   function draw() {
     ctx.clearRect(0, 0, W, H);
 
+    // ── Title underline + sparkles ──
+    var tEl = document.getElementById('title-overlay');
+    var tA = tEl ? parseFloat(tEl.style.opacity || '1') : 1;
+    if (tA > 0.02) {
+      var h1El = document.querySelector('#title-overlay h1');
+      if (h1El) {
+        var h1R    = h1El.getBoundingClientRect();
+        var lineY  = h1R.bottom + 10;
+        var lineHalfW = h1R.width * 0.52;   // slightly wider than the title text
+        var lx     = W/2 - lineHalfW;
+        var lineW  = lineHalfW * 2;
+
+        // Shoot-out animation: lineProgress 0→1 over first 1.5s after page load
+        if (!window._underlineStart) window._underlineStart = Date.now();
+        var elapsed = (Date.now() - window._underlineStart) / 3000;
+        var lineP   = Math.min(1, elapsed);  // 0→1
+        var ease    = 1 - Math.pow(1-lineP, 3);  // cubic ease-out
+        var curHalf = lineHalfW * ease;
+
+        // Sharp centre→edge gradient line
+        var g1 = ctx.createLinearGradient(W/2-curHalf, lineY, W/2+curHalf, lineY);
+        g1.addColorStop(0,   'rgba(255,252,220,0)');
+        g1.addColorStop(0.15,'rgba(255,252,220,'+(0.9*tA).toFixed(2)+')');
+        g1.addColorStop(0.85,'rgba(255,252,220,'+(0.9*tA).toFixed(2)+')');
+        g1.addColorStop(1,   'rgba(255,252,220,0)');
+        ctx.beginPath();
+        ctx.moveTo(W/2-curHalf, lineY);
+        ctx.lineTo(W/2+curHalf, lineY);
+        ctx.strokeStyle = g1; ctx.lineWidth = 1.8; ctx.stroke();
+
+        // Glow
+        if (curHalf > 10) {
+          var g2 = ctx.createLinearGradient(W/2-curHalf*0.7, lineY, W/2+curHalf*0.7, lineY);
+          g2.addColorStop(0,   'rgba(255,252,220,0)');
+          g2.addColorStop(0.5, 'rgba(255,252,220,'+(0.45*tA).toFixed(2)+')');
+          g2.addColorStop(1,   'rgba(255,252,220,0)');
+          ctx.save(); ctx.filter='blur(4px)';
+          ctx.beginPath();
+          ctx.moveTo(W/2-curHalf*0.7, lineY); ctx.lineTo(W/2+curHalf*0.7, lineY);
+          ctx.strokeStyle=g2; ctx.lineWidth=7; ctx.stroke();
+          ctx.restore();
+        }
+
+        // Spawn sparkles — more density
+        if (ease > 0.4 && sparkles.length < 200) {
+          var spawnCount = Math.floor(Math.random() * 3) + 2;
+          for (var si2 = 0; si2 < spawnCount; si2++) {
+            sparkles.push(newSparkle(lx, lineW, lineY, tA));
+          }
+        }
+
+        // Draw sparkles — trickle DOWN, react to cursor
+        var curX = window._sparkCursorX || -9999;
+        var curY = window._sparkCursorY || -9999;
+        for (var si=sparkles.length-1; si>=0; si--) {
+          var sp = sparkles[si];
+          sp.life++; sp.x += sp.vx; sp.y += sp.vy; sp.vy *= 0.97;
+          // Cursor repulsion
+          var dx = sp.x - curX, dy = sp.y - curY;
+          var dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 80 && dist > 0) {
+            var force = (80 - dist) / 80 * 1.8;
+            sp.vx += (dx / dist) * force;
+            sp.vy += (dy / dist) * force;
+          }
+          var lr = sp.life / sp.maxLife;
+          var sa = (lr < 0.25 ? lr/0.25 : (1-lr)/0.75) * sp.maxAlpha * tA;
+          if (sp.life >= sp.maxLife) { sparkles.splice(si,1); continue; }
+          ctx.globalAlpha = Math.max(0, sa);
+          ctx.fillStyle = 'rgba(255,252,220,1)';
+          if (sp.star) {
+            ctx.save(); ctx.translate(sp.x, sp.y); ctx.beginPath();
+            for (var k=0; k<4; k++) {
+              var ang = k/4*Math.PI*2, ir = sp.r*0.35;
+              if (k===0) ctx.moveTo(Math.cos(ang)*sp.r, Math.sin(ang)*sp.r);
+              else       ctx.lineTo(Math.cos(ang)*sp.r, Math.sin(ang)*sp.r);
+              var ma = ang+Math.PI/4;
+              ctx.lineTo(Math.cos(ma)*ir, Math.sin(ma)*ir);
+            }
+            ctx.closePath(); ctx.fill(); ctx.restore();
+          } else {
+            ctx.beginPath(); ctx.arc(sp.x, sp.y, sp.r, 0, Math.PI*2); ctx.fill();
+          }
+          ctx.globalAlpha = 1;
+        }
+      }
+    }
     // Background: pure black always (the section bg handles it)
     // Glow only when globe is small
     if (scrollProgress < 0.3) {
@@ -2351,6 +2474,8 @@ window.addEventListener('load', function() {
   window.addEventListener('mousemove', function(e) {
     mouseX = e.clientX;
     mouseY = e.clientY;
+    window._sparkCursorX = e.clientX;
+    window._sparkCursorY = e.clientY;
     if (mode !== 'star') return;
     var count = Math.floor(Math.random() * 2) + 2;
     for (var i = 0; i < count; i++) {
@@ -2485,8 +2610,8 @@ window.addEventListener('load', function() {
       var rotL = exitT > 0.01 ?  8 * easeOut(exitT) : -8 * (1 - e);
       var rotR = exitT > 0.01 ? -8 * easeOut(exitT) :  8 * (1 - e);
 
-      if (lEl) lEl.style.transform = 'translateX(' + (-110*(1-e)).toFixed(1) + 'vw) rotate(' + rotL.toFixed(1) + 'deg)';
-      if (rEl) rEl.style.transform = 'translateX(' +  (110*(1-e)).toFixed(1) + 'vw) rotate(' + rotR.toFixed(1) + 'deg)';
+      if (lEl) lEl.style.transform = 'translateX(' + (-35*(1-e)).toFixed(1) + 'vw) rotate(' + rotL.toFixed(1) + 'deg)';
+      if (rEl) rEl.style.transform = 'translateX(' +   (35*(1-e)).toFixed(1) + 'vw) rotate(' + rotR.toFixed(1) + 'deg)';
     }
   }
 
@@ -2626,6 +2751,111 @@ window.addEventListener('load', function() {
   draw();
 })();
 </script>
+
+
+<script>
+(function() {
+  function countUp(el, target, duration) {
+    var start = 0;
+    var startTime = null;
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      // Ease out cubic
+      var ease = 1 - Math.pow(1 - progress, 3);
+      var current = Math.round(ease * target);
+      el.textContent = current;
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(step);
+  }
+
+  var observed = false;
+  var chartEl = document.getElementById('barChart');
+  if (!chartEl) return;
+
+  var observer = new IntersectionObserver(function(entries) {
+    if (observed) return;
+    if (!entries[0].isIntersecting) return;
+    observed = true;
+    observer.disconnect();
+
+    // Find all bar-label-top elements and animate them
+    var labels = document.querySelectorAll('.bar-label-top');
+    labels.forEach(function(el, i) {
+      var target = parseInt(el.textContent, 10);
+      if (isNaN(target)) return;
+      el.textContent = '0';
+      // Stagger each bar slightly
+      setTimeout(function() {
+        countUp(el, target, 1200);
+      }, i * 60);
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(chartEl);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+(function() {
+  var tooltip = document.createElement('div');
+  tooltip.style.cssText = 'position:fixed;z-index:9999999;font-size:22px;line-height:1;pointer-events:none;opacity:0;transform:scale(0.4) translateY(10px);transition:opacity 0.15s ease,transform 0.2s cubic-bezier(0.22,1,0.36,1);';
+  document.body.appendChild(tooltip);
+
+  var emojis = {
+    'mission':'🎯','conflict-map':'🗺️','cyber':'📊',
+    'analysis':'🔍','faqs':'❓','socials':'📱',
+    'methodology':'🔢','bibliography':'🔗'
+  };
+
+  var timer = null;
+
+  function show(btn, emoji) {
+    clearTimeout(timer);
+    var r = btn.getBoundingClientRect();
+    tooltip.textContent = emoji;
+    tooltip.style.left = (r.left + r.width/2 - 13) + 'px';
+    tooltip.style.top  = (r.top - 36) + 'px';
+    tooltip.style.opacity = '1';
+    tooltip.style.transform = 'scale(1) translateY(0)';
+  }
+
+  function hide() {
+    timer = setTimeout(function() {
+      tooltip.style.opacity = '0';
+      tooltip.style.transform = 'scale(0.4) translateY(10px)';
+    }, 80);
+  }
+
+  // Use mouseover on document - bubbles up from any child
+  document.addEventListener('mouseover', function(e) {
+    var el = e.target;
+    // Walk up to find a nav-btn with data-emoji
+    while (el && el !== document.body) {
+      if (el.hasAttribute && el.hasAttribute('data-emoji')) {
+        show(el, el.getAttribute('data-emoji'));
+        return;
+      }
+      el = el.parentElement;
+    }
+    // Not over a nav-btn
+    hide();
+  });
+})();
+</script>
+
+
+
 
 </body>
 </html>
