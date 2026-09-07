@@ -19,30 +19,30 @@
    ============================================================ */
 :root{
   /* backgrounds */
-  --bg-page:        #f5f9fc;   /* primary off-white/blue-white */
-  --bg-card:        #ffffff;   /* card surfaces */
-  --bg-soft:        #e8f2fa;   /* soft light-blue tint block */
-  --bg-accent:      #16324f;   /* deep navy accent section (analogous to Leafora's dark-green section) */
+  --bg-page:        #f8eaf1;   /* soft pink page canvas */
+  --bg-card:        #fff7fb;   /* very light pink card surfaces */
+  --bg-soft:        #e8d9ef;   /* brighter lavender tint block */
+  --bg-accent:      #242228;   /* charcoal accent section */
 
   /* text */
-  --text-primary:   #111B24;   /* charcoal for headings */
-  --text-body:      #1E2B38;   /* dark slate for body copy */
-  --text-muted:     #3d4f5e;   /* dark slate-blue for captions/meta — still legible on light bg */
-  --text-on-accent: #eaf2f8;   /* text sitting on --bg-accent */
+  --text-primary:   #17151a;   /* charcoal for headings */
+  --text-body:      #2e2a31;   /* dark neutral body copy */
+  --text-muted:     #665f6a;   /* muted neutral captions/meta */
+  --text-on-accent: #f5f1f6;   /* text sitting on --bg-accent */
 
   /* accents */
-  --blue-500:       #4a90c2;   /* primary accent blue */
-  --blue-600:       #2f6690;   /* deeper accent / hover */
-  --blue-300:       #a9cde6;   /* light accent / borders */
-  --blue-100:       #dceaf4;   /* pale fills */
+  --blue-500:       #5b535d;   /* primary neutral accent */
+  --blue-600:       #39353d;   /* deeper neutral hover */
+  --blue-300:       #c4b9c6;   /* light neutral borders */
+  --blue-100:       #e9e3eb;   /* pale neutral fills */
 
   /* structure */
-  --border-soft:    #cfe2f0;   /* light-blue tinted dividers/borders */
+  --border-soft:    #d8d0d9;   /* soft gray-lilac dividers/borders */
   --radius-sm:      8px;
   --radius-md:      14px;
   --radius-lg:      22px;
-  --shadow-card:    0 6px 24px rgba(30,60,90,0.10);
-  --shadow-card-hover: 0 12px 32px rgba(30,60,90,0.16);
+  --shadow-card:    0 6px 24px rgba(28,24,31,0.10);
+  --shadow-card-hover: 0 12px 32px rgba(28,24,31,0.16);
   --maxw:           1180px;
 
   --font-display:   'Outfit', sans-serif;
@@ -121,11 +121,11 @@ button{ font-family:inherit; cursor:pointer; }
    body tag) rather than in-flow sections of #main-content.
    ============================================================ */
 #mission{ background:var(--bg-soft); }
-#conflict-map{ background:#0a1424; }
-#cyber{ background:#f5f9fc; }
-#faqs-page{ background:#0a1424; }
-#data-methodology-page{ background:#f5f9fc; }
-#methodology{ background:#f5f9fc; }
+#conflict-map{ background:#0e0d10; }
+#cyber{ background:#f6e7eb; }
+#faqs-page{ background:#0e0d10; }
+#data-methodology-page{ background:#f1e6f3; }
+#methodology{ background:#f8e9ec; }
 #about-us{ background:var(--bg-accent); }
 #briefs-page{ background:#ffffff; } /* matches the brief pages' own pure-white page canvas exactly */
 
@@ -156,11 +156,11 @@ button{ font-family:inherit; cursor:pointer; }
 }
 #conflict-map .section-heading p,
 #faqs-page .section-heading p{
-  color:#dceaf4;
+  color:#ddd6de;
 }
 #conflict-map .eyebrow,
 #faqs-page .eyebrow{
-  color:#eaf2f8;
+  color:#d35f7d;
 }
 
 .eyebrow{
@@ -170,11 +170,11 @@ button{ font-family:inherit; cursor:pointer; }
   font-weight:700;
   letter-spacing:.12em;
   text-transform:uppercase;
-  color:var(--blue-600);
+  color:#d35f7d;
   margin-bottom:14px;
 }
 .section-accent .eyebrow{
-  color:#eaf2f8;
+  color:#d35f7d;
 }
 
 .section-heading{
@@ -204,27 +204,27 @@ button{ font-family:inherit; cursor:pointer; }
   transition:all .2s ease;
 }
 .btn-primary{
-  background:var(--blue-500);
+  background:#d35f7d;
   color:#ffffff;
 }
 .btn-primary:hover{
-  background:var(--blue-600);
+  background:#b34e72;
   transform:translateY(-1px);
 }
 .btn-ghost{
   background:transparent;
-  border-color:var(--blue-300);
-  color:var(--blue-600);
+  border-color:#d35f7d;
+  color:#b34e72;
 }
 .btn-ghost:hover{
-  background:var(--blue-100);
+  background:#f8dfe8;
 }
 .section-accent .btn-ghost{
-  border-color:rgba(255,255,255,0.35);
-  color:#ffffff;
+  border-color:#d35f7d;
+  color:#d35f7d;
 }
 .section-accent .btn-ghost:hover{
-  background:rgba(255,255,255,0.1);
+  background:rgba(211,95,125,0.15);
 }
 
 /* ============================================================
@@ -234,7 +234,7 @@ button{ font-family:inherit; cursor:pointer; }
   position:fixed;
   top:0; left:0; right:0;
   z-index:100;
-  background:rgba(247,249,251,0.85);
+  background:rgba(244,241,244,0.92);
   backdrop-filter:blur(10px);
   -webkit-backdrop-filter:blur(10px);
   border-bottom:1px solid var(--border-soft);
@@ -261,7 +261,7 @@ button{ font-family:inherit; cursor:pointer; }
 .nav-brand .mark{
   width:10px; height:10px;
   border-radius:50%;
-  background:linear-gradient(135deg,var(--blue-500),var(--blue-600));
+  background:#d35f7d;
   flex:none;
 }
 .nav-links{
@@ -283,7 +283,7 @@ button{ font-family:inherit; cursor:pointer; }
   color:var(--blue-600);
 }
 .nav-cta{
-  background:var(--blue-500);
+  background:#d35f7d;
   color:#fff;
   padding:10px 20px;
   border-radius:100px;
@@ -291,7 +291,7 @@ button{ font-family:inherit; cursor:pointer; }
   font-size:14.5px;
   white-space:nowrap;
 }
-.nav-cta:hover{ background:var(--blue-600); }
+.nav-cta:hover{ background:#b34e72; }
 .nav-toggle{
   display:none;
   width:38px; height:38px;
@@ -335,7 +335,7 @@ button{ font-family:inherit; cursor:pointer; }
    ============================================================ */
 #hero{
   position:relative;
-  background:#0a1424;
+  background:#0e0d10;
   height:520px; /* explicit height, not min-height — required for #globe-container's height:100% to resolve at all (min-height does not establish a "definite" height for percentage-height descendants, which is why the globe canvas was rendering at 0px tall) */
   display:flex;
   flex-direction:column;
@@ -394,7 +394,7 @@ button{ font-family:inherit; cursor:pointer; }
    actual rendered box, so (with overflow:visible on #hero) the
    bottom slice of the giant letters spills past the dark hero
    background into whatever comes right after it. H1 color matches
-   the following band's background (#f5f9fc) exactly, so that
+   the following band's background (#f4f1f4) exactly, so that
    spilled portion merges seamlessly into it — the "popping out of
    the background" effect. The subtext line is a completely separate
    element further down (see .hero-subtext-band), so it can never
@@ -407,7 +407,7 @@ button{ font-family:inherit; cursor:pointer; }
   letter-spacing:-0.03em;
   line-height:0.9;
   text-transform:uppercase;
-  color:#f5f9fc;
+   color:#f4f1f4;
 }
 @media (min-width:1024px){
   #hero h1{
@@ -424,7 +424,7 @@ button{ font-family:inherit; cursor:pointer; }
    the same light section the title is bridging into. */
 .hero-subtext-band{
   position:relative;
-  background:#f5f9fc;
+   background:#f4f1f4;
   padding:56px 0 4px;
 }
 .hero-subtext-band p{
@@ -451,7 +451,7 @@ button{ font-family:inherit; cursor:pointer; }
 }
 .briefs-cta-btn{
   display:inline-block;
-  background:var(--blue-500);
+  background:#d35f7d;
   color:#fff;
   padding:15px 30px;
   border-radius:100px;
@@ -459,13 +459,13 @@ button{ font-family:inherit; cursor:pointer; }
   font-weight:600;
   font-size:16px;
   white-space:nowrap;
-  box-shadow:0 8px 22px rgba(74,144,194,0.28);
+  box-shadow:0 8px 22px rgba(45,40,48,0.20);
   transition:background .2s ease, transform .2s ease, box-shadow .2s ease;
 }
 .briefs-cta-btn:hover{
-  background:var(--blue-600);
+  background:#b34e72;
   transform:translateY(-2px);
-  box-shadow:0 12px 26px rgba(74,144,194,0.32);
+  box-shadow:0 12px 26px rgba(45,40,48,0.26);
 }
 .briefs-cta-preview-link{
   display:block;
@@ -534,7 +534,7 @@ button{ font-family:inherit; cursor:pointer; }
   font-size:12.5px;
   font-weight:500;
   line-height:1.4;
-  color:rgba(245,249,252,0.75);
+  color:rgba(244,241,244,0.75);
 }
 @media (max-width:760px){
   .hero-flank-stats{
@@ -684,7 +684,7 @@ button{ font-family:inherit; cursor:pointer; }
 /* Per-threat accent colors — border and pill share the same hue so
    each card reads as one coherent visual unit. */
 .cyber-threat-ransomware{ border-left-color:#A52714; }
-.cyber-threat-ddos{ border-left-color:var(--blue-500); }
+.cyber-threat-ddos{ border-left-color:#4a90c2; }
 .cyber-threat-infra{ border-left-color:#F57C00; }
 .cyber-threat-databreach{ border-left-color:#5b6b7a; }
 
@@ -702,9 +702,9 @@ button{ font-family:inherit; cursor:pointer; }
   align-self:flex-start;
 }
 .attack-pill-ransomware{ background:rgba(165,39,20,0.1); color:#A52714; }
-.attack-pill-ddos{ background:var(--blue-100); color:var(--blue-600); }
+.attack-pill-ddos{ background:#dceaf4; color:#2f6690; }
 .attack-pill-infra{ background:rgba(245,124,0,0.12); color:#B45900; }
-.attack-pill-databreach{ background:rgba(91,107,122,0.12); color:#3d4f5e; }
+.attack-pill-databreach{ background:rgba(91,83,93,0.12); color:#4b4550; }
 
 @media (max-width:980px){
   .cyber-layout{
@@ -890,16 +890,16 @@ button{ font-family:inherit; cursor:pointer; }
   font-family:var(--font-body);
   font-size:15.5px;
   font-weight:600;
-  color:var(--blue-500);
+  color:#d35f7d;
 }
 .dm-learnmore-link:hover{
-  color:var(--blue-600);
+  color:#b34e72;
   text-decoration:underline;
 }
 .dm-learnmore-tag{
   display:inline-block;
-  background:var(--blue-100);
-  color:var(--blue-600);
+  background:#d35f7d;
+  color:#ffffff;
   font-family:var(--font-data);
   font-size:11px;
   font-weight:700;
@@ -1022,7 +1022,7 @@ button{ font-family:inherit; cursor:pointer; }
   gap:10px;
 }
 .dm-accordion-nested{
-  background:var(--bg-soft);
+  background:transparent;
   border:1px solid var(--border-soft);
   border-radius:var(--radius-sm);
 }
@@ -1136,7 +1136,7 @@ button{ font-family:inherit; cursor:pointer; }
 .dm-field{
   border-radius:12px;
   border-left:3px solid var(--blue-500);
-  background:rgba(74,144,194,0.05);
+  background:rgba(91,83,93,0.05);
   padding:14px 16px 15px;
   margin-bottom:12px;
 }
@@ -1164,7 +1164,7 @@ button{ font-family:inherit; cursor:pointer; }
 .dm-field-def,
 .dm-field-why{
   border-left-color:var(--blue-500);
-  background:rgba(74,144,194,0.05);
+  background:rgba(91,83,93,0.05);
 }
 .dm-field-dim .dm-field-label,
 .dm-field-def .dm-field-label,
@@ -1184,7 +1184,7 @@ button{ font-family:inherit; cursor:pointer; }
 .dm-field-source .dm-field-label,
 .dm-field-period .dm-field-label,
 .dm-field-rationale .dm-field-label{
-  color:#3d4f5e;
+  color:#4b4550;
   background:rgba(91,107,122,0.14);
 }
 .dm-field-source p,
@@ -1294,7 +1294,7 @@ button{ font-family:inherit; cursor:pointer; }
   margin:8px 0 16px;
   color:var(--text-primary);
   line-height:1.9;
-  box-shadow:0 2px 8px rgba(30,60,90,0.05);
+  box-shadow:0 2px 8px rgba(28,24,31,0.05);
 }
 
 /* ============================================================
@@ -1313,7 +1313,7 @@ button{ font-family:inherit; cursor:pointer; }
   border-radius:var(--radius-sm);
   padding:20px 24px;
   margin:10px 0 16px;
-  box-shadow:0 2px 8px rgba(30,60,90,0.05);
+  box-shadow:0 2px 8px rgba(28,24,31,0.05);
   overflow-x:auto;
 }
 .dm-eq-label{
@@ -1425,7 +1425,7 @@ button{ font-family:inherit; cursor:pointer; }
   font-size:14.5px;
   border-radius:10px;
   overflow:hidden;
-  box-shadow:0 2px 8px rgba(30,60,90,0.05);
+  box-shadow:0 2px 8px rgba(28,24,31,0.05);
 }
 .dm-table th,
 .dm-table td{
@@ -1444,7 +1444,7 @@ button{ font-family:inherit; cursor:pointer; }
   letter-spacing:.04em;
 }
 .dm-table tbody tr:nth-child(even) td{
-  background:rgba(74,144,194,0.035);
+  background:rgba(91,83,93,0.035);
 }
 .dm-table td{
   background:var(--bg-card);
@@ -1455,7 +1455,7 @@ button{ font-family:inherit; cursor:pointer; }
    10. FOOTER
    ============================================================ */
 footer{
-  background:var(--bg-accent);
+  background:#353238;
   color:var(--blue-100);
   padding:56px 0 32px;
 }
@@ -1471,8 +1471,8 @@ footer h4{ color:#fff; font-size:15px; margin-bottom:14px; }
 footer .foot-links{ display:flex; flex-direction:column; gap:8px; font-size:14px; }
 footer .foot-links a:hover{ color:#fff; }
 footer .foot-social{ display:flex; flex-direction:column; gap:10px; font-size:14.5px; }
-footer .foot-social a{ color:#87CEFA; font-weight:700; letter-spacing:.01em; }
-footer .foot-social a:hover{ color:#ffffff; text-decoration:underline; }
+footer .foot-social a{ color:#c47b91; font-weight:700; letter-spacing:.01em; }
+footer .foot-social a:hover{ color:#d889a0; text-decoration:underline; }
 footer .foot-disclaimer{
   padding-top:28px;
   margin-top:4px;
@@ -1483,7 +1483,7 @@ footer .foot-disclaimer p{
   margin:0;
   font-size:12.5px;
   line-height:1.75;
-  color:rgba(234,242,248,0.55);
+  color:rgba(245,241,246,0.55);
 }
 footer .foot-bottom{
   padding-top:24px;
@@ -1492,7 +1492,7 @@ footer .foot-bottom{
   flex-wrap:wrap;
   gap:12px;
   font-size:13px;
-  color:rgba(234,242,248,0.6);
+  color:rgba(245,241,246,0.6);
 }
 
 /* ============================================================
@@ -2673,7 +2673,7 @@ footer .foot-bottom{
     <div class="foot-grid">
       <div>
         <h4>Medical Security Index</h4>
-        <p style="max-width:280px;color:rgba(234,242,248,0.65);font-size:14px;">Independent research measuring how armed conflict and cyber threats affect healthcare systems worldwide.</p>
+        <p style="max-width:280px;color:rgba(245,241,246,0.65);font-size:14px;">Independent research measuring how armed conflict and cyber threats affect healthcare systems worldwide.</p>
       </div>
       <div>
         <h4>Research</h4>
@@ -2727,25 +2727,24 @@ footer .foot-bottom{
 'use strict';
 
 /* ---------------------------------------------------------------
-   0. THEME — soft light blues / slate grays / off-white
+   0. THEME — soft pink-gray / charcoal / muted plum / white
    --------------------------------------------------------------- */
 var THEME = {
-  sphereFrom:   '#1c3a55',   // radial gradient center (deep navy blue)
-  sphereTo:     '#0b1c2c',   // radial gradient edge (near-black navy)
-  sphereStroke: 'rgba(255,255,255,0.10)',
-  graticule:    'rgba(255,255,255,0.08)',
-  landDefault:  '#3f5c73',   // muted slate-blue landmass (countries w/ no index data)
-  landStroke:   'rgba(255,255,255,0.10)',
-  landStrokeHi: 'rgba(255,255,255,0.30)',
-  selStroke:    '#87CEFA',   // bright accent selection outline (pops on dark sphere)
+  sphereFill:   '#19171c',   // solid charcoal sphere
+  sphereStroke: 'rgba(255,255,255,0.14)',
+  graticule:    'rgba(255,255,255,0.12)',
+  landDefault:  '#4a454d',   // muted neutral landmass (countries w/ no index data)
+  landStroke:   'rgba(255,255,255,0.12)',
+  landStrokeHi: 'rgba(255,255,255,0.34)',
+  selStroke:    '#87CEFA',   // blue selection outline
   panelBg:      '#ffffff',
-  panelBorder:  '#e1e9ef',
-  textPrimary:  '#1e2b38',
-  textMuted:    '#3d4f5e',
-  rowBorder:    '#eef2f5',
-  blue500:      '#4a90c2',   // primary accent — matches --blue-500 in the main stylesheet
-  blue100:      '#dceaf4',   // pale fill — matches --blue-100
-  blue600:      '#2f6690',   // deep accent — matches --blue-600
+  panelBorder:  '#d8d0d9',
+  textPrimary:  '#17151a',
+  textMuted:    '#665f6a',
+  rowBorder:    '#ebe6ec',
+  blue500:      '#5b535d',   // neutral accent — matches --blue-500 in the main stylesheet
+  blue100:      '#e9e3eb',   // pale fill — matches --blue-100
+  blue600:      '#39353d',   // deep accent — matches --blue-600
   fontDisplay:  "'Outfit', sans-serif",
   fontMono:     "'Space Mono', 'PT Mono', ui-monospace, monospace"
 };
@@ -2802,8 +2801,8 @@ var THEME = {
        Displacement & Demographics — the original field rows,
        regrouped into two clearly labeled tinted panels instead of
        one long flat list. ---- */
-    + '.msi-cd-detail{border-radius:12px;background:rgba(74,144,194,0.045);border:1px solid rgba(74,144,194,0.12);padding:14px 16px 4px;margin-top:0;}'
-    + '.msi-cd-detail-title{font-family:' + THEME.fontMono + ';font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:' + THEME.blue600 + ';margin-bottom:2px;}'
+    + '.msi-cd-detail{border-radius:12px;background:rgba(91,83,93,0.045);border:1px solid rgba(91,83,93,0.12);padding:14px 16px 4px;margin-top:0;}'
+    + '.msi-cd-detail-title{font-family:' + THEME.fontMono + ';font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#A52714;margin-bottom:2px;}'
     + '.msi-cd-fields{display:flex;flex-direction:column;}'
     + '.msi-cd-row{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid ' + THEME.rowBorder + ';}'
     + '.msi-cd-row:last-child{border-bottom:none;}'
@@ -2899,17 +2898,11 @@ function buildSVG() {
   wrap.appendChild(svg);
 
   var defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-  var grad = document.createElementNS('http://www.w3.org/2000/svg', 'radialGradient');
-  grad.setAttribute('id', 'msiSphereGrad'); grad.setAttribute('cx', '38%'); grad.setAttribute('cy', '32%'); grad.setAttribute('r', '68%');
-  var s1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-  s1.setAttribute('offset', '0%'); s1.setAttribute('stop-color', THEME.sphereFrom);
-  var s2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-  s2.setAttribute('offset', '100%'); s2.setAttribute('stop-color', THEME.sphereTo);
-  grad.appendChild(s1); grad.appendChild(s2); defs.appendChild(grad); svg.appendChild(defs);
+  svg.appendChild(defs);
 
   var sphere = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
   sphere.setAttribute('cx', cx); sphere.setAttribute('cy', cy); sphere.setAttribute('r', R);
-  sphere.setAttribute('fill', 'url(#msiSphereGrad)');
+  sphere.setAttribute('fill', THEME.sphereFill);
   sphere.setAttribute('stroke', THEME.sphereStroke); sphere.setAttribute('stroke-width', '1.5');
   svg.appendChild(sphere);
 
@@ -3076,8 +3069,8 @@ function showPanel(cd) {
     ? yearsConflict + ' yr' + (yearsConflict == 1 ? '' : 's') + ' of sustained conflict'
     : 'UCDP conflict fatalities';
   var fatalitiesHTML =
-    '<div class="msi-cd-callout" style="background:' + hexToRgba(THEME.blue500, 0.08) + ';border-left-color:' + THEME.blue500 + ';">' +
-      '<div class="msi-cd-callout-label" style="color:' + THEME.blue600 + '">Fatalities in 2024</div>' +
+    '<div class="msi-cd-callout" style="background:' + hexToRgba('#A52714', 0.08) + ';border-left-color:#A52714;">' +
+      '<div class="msi-cd-callout-label" style="color:#A52714">Fatalities in 2024</div>' +
       '<div class="msi-cd-callout-value" style="color:' + THEME.textPrimary + '">' + fatalitiesValue + '</div>' +
       '<div class="msi-cd-callout-sub">' + fatalitiesSub + '</div>' +
     '</div>';
@@ -3351,13 +3344,13 @@ loop();
 
 var THEME = {
   bg:          '#ffffff',
-  grid:        '#e6edf2',
-  axisText:    '#3d4f5e',
-  labelText:   '#111B24',
-  barBase:     '#0a1424',
-  barHover:    '#0a1424',
-  tooltipBg:   '#111B24',
-  tooltipText: '#eaf2f8',
+  grid:        '#ded7df',
+  axisText:    '#665f6a',
+  labelText:   '#17151a',
+  barBase:     '#0e0d10',
+  barHover:    '#0e0d10',
+  tooltipBg:   '#17151a',
+  tooltipText: '#f5f1f6',
   fontDisplay: "'Outfit', sans-serif",
   fontMono:    "'Space Mono', ui-monospace, monospace"
 };
@@ -3503,7 +3496,7 @@ function drawBreachChart() {
     var x = padL + i * (barW + gap);
     var y = padT + plotH - barTargetH;
     var hovered = breachGeom._hoverIdx === i;
-    ctx.fillStyle = THEME.barBase; // always solid #0a1424 — no gradient, no color fade
+    ctx.fillStyle = THEME.barBase; // always a single solid neutral color
     ctx.beginPath();
     var r = Math.max(0, Math.min(4 * scale, barW / 2));
     if (ctx.roundRect) ctx.roundRect(x, y, barW, barTargetH, [r, r, 0, 0]);
@@ -3512,7 +3505,7 @@ function drawBreachChart() {
     if (hovered) {
       // hover feedback via a light outline instead of a fill-color
       // change, since the fill itself must stay one solid color
-      ctx.strokeStyle = 'rgba(135,206,250,0.9)';
+      ctx.strokeStyle = 'rgba(211,107,146,0.9)';
       ctx.lineWidth = 2;
       ctx.stroke();
     }
