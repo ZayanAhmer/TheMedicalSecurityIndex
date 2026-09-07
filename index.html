@@ -259,9 +259,10 @@ button{ font-family:inherit; cursor:pointer; }
   white-space:nowrap;
 }
 .nav-brand .mark{
-  width:10px; height:10px;
+  width:24px; height:24px;
   border-radius:50%;
-  background:#d35f7d;
+  object-fit:contain;
+  display:block;
   flex:none;
 }
 .nav-links{
@@ -1517,7 +1518,7 @@ footer .foot-bottom{
      ============================================================ -->
 <nav id="main-nav">
   <div class="nav-row">
-    <a class="nav-brand" href="#hero"><span class="mark"></span>Medical Security Index</a>
+    <a class="nav-brand" href="#hero"><img class="mark" src="MSI.png" alt="Medical Security Index logo">Medical Security Index</a>
     <ul class="nav-links" id="navLinks">
       <li><a class="nav-btn" href="#conflict-map">Interactive Research Map</a></li>
       <li><a class="nav-btn" href="#cyber">Cyber Attacks</a></li>
@@ -1670,8 +1671,8 @@ footer .foot-bottom{
     <div class="mission-grid">
       <div class="mission-card">
         <div class="icon-dot">◐</div>
-        <h3>Real data from conflict environments</h3>
-        <p>Verified incidents affecting hospitals, clinics, and medical personnel across multiple regions.</p>
+        <h3>Real-world data from conflict-affected settings</h3>
+        <p>Comparative research combining conflict, displacement, healthcare capacity, and demographic data to examine pressures on healthcare systems.</p>
       </div>
       <div class="mission-card">
         <div class="icon-dot">▤</div>
