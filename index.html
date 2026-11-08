@@ -251,7 +251,7 @@ button{ font-family:inherit; cursor:pointer; }
 .nav-brand{
   font-family:var(--font-display);
   font-weight:700;
-  font-size:17px;
+  font-size:16px;
   color:var(--text-primary);
   display:flex;
   align-items:center;
@@ -268,14 +268,15 @@ button{ font-family:inherit; cursor:pointer; }
 .nav-links{
   display:flex;
   align-items:center;
-  gap:2px;
-  flex-wrap:wrap;
+  gap:0;
+  flex-wrap:nowrap;
+  white-space:nowrap;
 }
 .nav-btn{
-  font-size:14.5px;
+  font-size:13.25px;
   font-weight:500;
   color:var(--text-body);
-  padding:9px 14px;
+  padding:8px 9px;
   border-radius:100px;
   transition:background .15s ease, color .15s ease;
 }
@@ -283,13 +284,24 @@ button{ font-family:inherit; cursor:pointer; }
   background:var(--blue-100);
   color:var(--blue-600);
 }
+/* Alameda Lifeline stays a text-style navigation link, highlighted in MSI pink. */
+#main-nav .nav-links > li > .nav-alameda-link,
+#main-nav .nav-links > li > .nav-alameda-link:visited {
+  color: #d35f7d;
+  background: transparent;
+}
+#main-nav .nav-links > li > .nav-alameda-link:hover,
+#main-nav .nav-links > li > .nav-alameda-link:focus-visible {
+  color: #b34e72;
+  background: transparent;
+}
 .nav-cta{
   background:#d35f7d;
   color:#fff;
   padding:10px 20px;
   border-radius:100px;
   font-weight:600;
-  font-size:14.5px;
+  font-size:13.25px;
   white-space:nowrap;
 }
 .nav-cta:hover{ background:#b34e72; }
@@ -313,7 +325,7 @@ button{ font-family:inherit; cursor:pointer; }
 .nav-toggle span::before{ position:absolute; top:-6px; }
 .nav-toggle span::after{ position:absolute; top:6px; }
 
-@media (max-width:900px){
+@media (max-width:1020px){
   .nav-links{
     position:fixed;
     top:64px; left:0; right:0;
@@ -608,6 +620,195 @@ button{ font-family:inherit; cursor:pointer; }
 }
 .data-panel .row:last-child{ border-bottom:none; }
 .data-panel .row b{ color:var(--text-primary); }
+
+/* ============================================================
+   MSI CYBER HOMEPAGE PREVIEW
+   Compact state-level data preview and direct entry point to the
+   full cybersecurity research interface.
+   ============================================================ */
+#cyber .cyber-home-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.12fr) minmax(300px,.88fr);
+  gap:24px;
+  align-items:stretch;
+}
+#cyber .cyber-home-chart,
+#cyber .cyber-home-intro{
+  min-width:0;
+  background:var(--bg-card);
+  border:1px solid var(--border-soft);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-card);
+}
+#cyber .cyber-home-chart{
+  display:flex;
+  flex-direction:column;
+  padding:26px 28px 18px;
+}
+#cyber .cyber-home-chart-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:22px;
+}
+#cyber .cyber-home-overline,
+#cyber .cyber-home-kicker{
+  display:block;
+  margin-bottom:8px;
+  color:#b34e72;
+  font-family:var(--font-data);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+#cyber .cyber-home-chart h3{
+  margin:0 0 5px;
+  font-size:21px;
+}
+#cyber .cyber-home-chart-head p{
+  margin:0;
+  color:var(--text-muted);
+  font-size:12.5px;
+  line-height:1.5;
+}
+#cyber .cyber-home-total{
+  flex:none;
+  padding:7px 10px;
+  border:1px solid var(--border-soft);
+  border-radius:100px;
+  color:var(--text-muted);
+  font-family:var(--font-data);
+  font-size:10px;
+  white-space:nowrap;
+}
+#cyber .cyber-home-bars{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  margin:2px 0 20px;
+}
+#cyber .cyber-home-bar-row{
+  display:grid;
+  grid-template-columns:36px minmax(0,1fr) 38px;
+  align-items:center;
+  gap:12px;
+}
+#cyber .cyber-home-state{
+  color:var(--text-primary);
+  font-family:var(--font-data);
+  font-size:11px;
+  font-weight:700;
+}
+#cyber .cyber-home-bar-track{
+  height:11px;
+  overflow:hidden;
+  border-radius:100px;
+  background:#eee7f0;
+}
+#cyber .cyber-home-bar-fill{
+  display:block;
+  height:100%;
+  border-radius:100px;
+  background:#d35f7d;
+  transition:width .45s ease;
+}
+#cyber .cyber-home-bar-value{
+  color:var(--text-primary);
+  font-family:var(--font-data);
+  font-size:11px;
+  font-weight:700;
+  text-align:right;
+}
+#cyber .cyber-home-chart-note{
+  margin:auto 0 0;
+  color:var(--text-muted);
+  font-size:11.5px;
+  line-height:1.5;
+}
+#cyber .cyber-home-attribution{
+  margin:13px 0 0;
+  padding-top:12px;
+  border-top:1px solid var(--border-soft);
+  color:var(--text-muted);
+  font-size:10.5px;
+  line-height:1.5;
+  text-align:right;
+}
+#cyber .cyber-home-attribution a{
+  color:#9f4567;
+  font-weight:600;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+#cyber .cyber-home-intro{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  padding:34px;
+}
+#cyber .cyber-home-intro h3{
+  margin:0 0 13px;
+  font-size:clamp(22px,2.5vw,29px);
+  line-height:1.18;
+}
+#cyber .cyber-home-intro > p{
+  margin:0 0 17px;
+  color:var(--text-muted);
+  font-size:15px;
+  line-height:1.65;
+}
+#cyber .cyber-home-features{
+  display:grid;
+  gap:9px;
+  margin:0 0 24px;
+  padding:0;
+  list-style:none;
+}
+#cyber .cyber-home-features li{
+  position:relative;
+  padding-left:22px;
+  color:var(--text-body);
+  font-size:13px;
+  line-height:1.5;
+}
+#cyber .cyber-home-features li::before{
+  position:absolute;
+  left:0;
+  top:.48em;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#d35f7d;
+  content:"";
+}
+#cyber .cyber-home-btn{
+  margin-top:auto;
+  padding:13px 24px;
+}
+#cyber .cyber-home-btn span{
+  font-size:17px;
+  line-height:1;
+}
+@media (max-width:900px){
+  #cyber .cyber-home-grid{ grid-template-columns:1fr; }
+  #cyber .cyber-home-intro{ padding:28px; }
+}
+@media (max-width:520px){
+  #cyber .cyber-home-chart{ padding:22px 18px 16px; }
+  #cyber .cyber-home-chart-head{ flex-direction:column; gap:10px; }
+  #cyber .cyber-home-intro{ padding:24px 20px; }
+  #cyber .cyber-home-attribution{ text-align:left; }
+}
+
+/* MSI Cyber preview follows the original homepage graph within the same section. */
+.cyber-home-section-wrap{
+  margin-top:64px;
+  padding-top:64px;
+  border-top:1px solid var(--border-soft);
+}
 
 /* ============================================================
    6. CYBER ATTACKS SECTION
@@ -2523,6 +2724,13 @@ footer .foot-bottom{
         line-height: 1.55;
       }
 
+      #cybersecurity-page .cyber-source-note a {
+        color: #9f4567;
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
       @media (max-width: 1050px) {
         #cybersecurity-page .cyber-kpis {
           grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2630,6 +2838,184 @@ footer .foot-bottom{
         }
       }
 
+
+
+/* ============================================================
+   ALAMEDA LIFELINE — INTERACTIVE PHONE PREVIEW PAGE
+   The original app is served from ./alameda-lifeline/ in the same
+   deployment and runs inside a responsive iPhone-style browser frame.
+   ============================================================ */
+#alameda-lifeline-page {
+  min-height: 100vh;
+  padding: 70px 20px 18px;
+  background: #f8eaf1;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+#alameda-lifeline-page .alameda-page-heading {
+  width: min(900px, 100%);
+  text-align: center;
+  margin: 0 auto 12px;
+}
+#alameda-lifeline-page .alameda-page-heading h1 {
+  margin: 0 0 8px;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: clamp(32px, 3.4vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+#alameda-lifeline-page .alameda-page-heading p {
+  max-width: 860px;
+  margin: 0 auto;
+  color: #39333a;
+  font-size: clamp(14px, 1.2vw, 16px);
+  font-weight: 400;
+  line-height: 1.45;
+}
+#alameda-lifeline-page .alameda-launch-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  color: #887b85;
+  font-family: var(--font-data);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+#alameda-lifeline-page .alameda-launch-status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d35f7d;
+  box-shadow: 0 0 0 4px rgba(211, 95, 125, 0.12);
+}
+#alameda-lifeline-page .alameda-phone-frame {
+  position: relative;
+  flex: none;
+  /* Full-size iPhone 13 proportions: restored to a genuinely readable
+     device width, with the earlier 930px height trimmed to 844px. */
+  width: min(390px, calc(100vw - 40px));
+  height: auto;
+  aspect-ratio: 390 / 844;
+  padding: 9px;
+  overflow: hidden;
+  border: 9px solid #242228;
+  border-radius: 58px;
+  background: #242228;
+  box-shadow: 0 28px 72px rgba(43, 32, 42, 0.25), 0 8px 20px rgba(43, 32, 42, 0.13);
+}
+#alameda-lifeline-page .alameda-phone-frame::before {
+  position: absolute;
+  z-index: 5;
+  top: 15px;
+  left: 50%;
+  width: 105px;
+  height: 27px;
+  transform: translateX(-50%);
+  border-radius: 18px;
+  background: #050505;
+  content: "";
+  pointer-events: none;
+}
+#alameda-lifeline-page .alameda-phone-frame::after {
+  position: absolute;
+  z-index: 6;
+  top: 24px;
+  left: calc(50% + 31px);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #161a2d;
+  box-shadow: inset 0 0 0 1px #242c52;
+  content: "";
+  pointer-events: none;
+}
+#alameda-lifeline-page .alameda-phone-screen {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 42px;
+  background: #fbe9ec;
+}
+#alameda-lifeline-page .alameda-phone-status {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex: 0 0 44px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 19px 0;
+  background: #fbe9ec;
+  color: #17151a;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+#alameda-lifeline-page .alameda-phone-status-icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#alameda-lifeline-page .alameda-phone-status-icons svg {
+  display: block;
+  width: auto;
+  height: 13px;
+}
+#alameda-lifeline-page .alameda-phone-app {
+  display: block;
+  width: 100%;
+  min-height: 0;
+  flex: 1 1 auto;
+  border: 0;
+  background: #fbe9ec;
+}
+#alameda-lifeline-page .alameda-phone-caption {
+  width: min(760px, 100%);
+  margin: 12px auto 0;
+  color: #817984;
+  font-size: 12px;
+  line-height: 1.45;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  #alameda-lifeline-page {
+    padding: 96px 14px 36px;
+  }
+  #alameda-lifeline-page .alameda-page-heading {
+    margin-bottom: 18px;
+  }
+  #alameda-lifeline-page .alameda-page-heading p {
+    font-size: 15px;
+  }
+  #alameda-lifeline-page .alameda-phone-frame {
+    width: min(390px, calc(100vw - 28px));
+    height: auto;
+    aspect-ratio: 390 / 844;
+    border-width: 7px;
+    border-radius: 48px;
+    padding: 7px;
+  }
+  #alameda-lifeline-page .alameda-phone-screen {
+    border-radius: 36px;
+  }
+  #alameda-lifeline-page .alameda-phone-status {
+    flex-basis: 40px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -2641,6 +3027,7 @@ footer .foot-bottom{
   <div class="nav-row">
     <a class="nav-brand" href="#hero"><img class="mark" src="MSI.png" alt="Medical Security Index logo">Medical Security Index</a>
     <ul class="nav-links" id="navLinks">
+      <li><a class="nav-btn nav-alameda-link" href="#alameda-lifeline-page" id="nav-alameda-lifeline-btn">Alameda Lifeline</a></li>
       <li><a class="nav-btn" href="#conflict-map">Interactive Research Map</a></li>
       <li><a class="nav-btn" href="#cybersecurity-page" id="nav-cybersecurity-btn">Cybersecurity</a></li>
       <li><a class="nav-btn" href="#mission">Our Mission</a></li>
@@ -2735,7 +3122,9 @@ footer .foot-bottom{
 </section>
 
 <!-- ============================================================
-     CYBER ATTACKS (bar chart)
+     CYBER ATTACKS GRAPH + MSI CYBER HOMEPAGE PREVIEW
+     The original annual breach graph remains first; the newer
+     state-level MSI Cyber preview follows directly beneath it.
      ============================================================ -->
 <section id="cyber" class="section">
   <div class="section-wrap">
@@ -2777,15 +3166,48 @@ footer .foot-bottom{
       </div>
     </div>
     <div class="dm-learnmore-wrap">
-      <a class="dm-learnmore-link" href="#cybersecurity-page" id="cyber-live-threats-btn">View Live Cybersecurity Threats <span class="dm-learnmore-arrow">&#8599;</span></a>
+      <a class="dm-learnmore-link" href="#cybersecurity-page" id="cyber-graph-live-threats-btn">View Live Cybersecurity Threats <span class="dm-learnmore-arrow">&#8599;</span></a>
     </div>
-    <script>
-      document.getElementById('cyber-live-threats-btn').addEventListener('click', function (e) {
-        e.preventDefault();
-        var navBtn = document.getElementById('nav-cybersecurity-btn');
-        if (navBtn) navBtn.click();
-      });
-    </script>
+
+  </div>
+
+
+<div class="section-wrap cyber-home-section-wrap">
+    <div class="section-heading">
+      <span class="eyebrow">MSI CYBER / DATA EXPLORER</span>
+      <h2>Healthcare Cybersecurity, State by State</h2>
+      <p>Explore how reported healthcare data breaches are distributed across the United States through MSI&rsquo;s cybersecurity research interface.</p>
+    </div>
+
+    <div class="cyber-home-grid">
+      <article class="cyber-home-chart" aria-labelledby="cyber-home-chart-title">
+        <div class="cyber-home-chart-head">
+          <div>
+            <span class="cyber-home-overline">MSI Cyber data preview</span>
+            <h3 id="cyber-home-chart-title">Top states by breach filings</h3>
+            <p>HIPAA-reportable healthcare breach filings · state-level dataset</p>
+          </div>
+          <span class="cyber-home-total"><strong id="cyber-home-state-count">50</strong> states</span>
+        </div>
+        <div class="cyber-home-bars" id="cyber-home-bars" role="list" aria-label="Top five states by reported healthcare breach filings">
+          <p class="cyber-home-chart-note">Loading state-level filing data…</p>
+        </div>
+        <p class="cyber-home-chart-note">A preview of the state-level filing counts explored in the full MSI Cyber dashboard.</p>
+        <p class="cyber-home-attribution">Breach data: <a href="https://patient-protect.com/breachdash" target="_blank" rel="noopener">Patient Protect — patient-protect.com/breachdash</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
+      </article>
+
+      <article class="cyber-home-intro" aria-labelledby="cyber-home-intro-title">
+        <span class="cyber-home-kicker">Medical Security Index · Cyber</span>
+        <h3 id="cyber-home-intro-title">A closer look at healthcare data breaches across all 50 states.</h3>
+        <p>MSI Cyber turns Patient Protect breach-dashboard data into an interactive research interface for exploring state-level patterns and potential data-quality concerns.</p>
+        <ul class="cyber-home-features">
+          <li>Interactive map covering all 50 U.S. states</li>
+          <li>State rankings and comparisons of filings, event groups, and organizations</li>
+          <li>Research flags highlighting patterns and discrepancies in the supplied data</li>
+        </ul>
+        <a class="btn btn-primary cyber-home-btn" href="#cybersecurity-page" id="cyber-live-threats-btn">Open MSI Cyber <span aria-hidden="true">&#8599;</span></a>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -3036,7 +3458,7 @@ footer .foot-bottom{
             <span>Medical Security Index</span>
             <span class="cyber-brand-chip">Cyber</span>
           </div>
-          <p class="cyber-live-label"><span class="cyber-live-dot" aria-hidden="true"></span>Live monitoring · Patient Protect data</p>
+          <p class="cyber-live-label"><span class="cyber-live-dot" aria-hidden="true"></span>Patient Protect breach dashboard · CC BY 4.0</p>
           <h1>Healthcare Cyber <span>Threat Intelligence</span></h1>
           <p class="cyber-hero-copy">
             Tracking HIPAA-reportable data breaches across all 50 U.S. states. Identifying
@@ -3046,7 +3468,7 @@ footer .foot-bottom{
             <div class="cyber-kpi"><span class="cyber-kpi-value">1,288</span><span class="cyber-kpi-label">Total breach filings</span></div>
             <div class="cyber-kpi"><span class="cyber-kpi-value">1,237</span><span class="cyber-kpi-label">Distinct organizations</span></div>
             <div class="cyber-kpi"><span class="cyber-kpi-value">1,200</span><span class="cyber-kpi-label">Source event groups</span></div>
-            <div class="cyber-kpi"><span class="cyber-kpi-value">46</span><span class="cyber-kpi-label">States tracked</span></div>
+            <div class="cyber-kpi"><span class="cyber-kpi-value" id="cyber-state-count">50</span><span class="cyber-kpi-label">States tracked</span></div>
             <div class="cyber-kpi"><span class="cyber-kpi-value">14</span><span class="cyber-kpi-label">States flagged</span></div>
             <div class="cyber-kpi"><span class="cyber-kpi-value">9</span><span class="cyber-kpi-label">High / critical risk</span></div>
           </div>
@@ -3254,7 +3676,7 @@ footer .foot-bottom{
               <h3>Data Quality Note</h3>
               <p>Filing/group discrepancies (for example, California: 135 filings versus 116 groups) indicate cases where the relationship between individual filings and source breach events needs further investigation. Gaps may reflect multi-state incidents, amended filings, or data-entry variations. The Change Healthcare filing in Minnesota (192.7M affected persons) represents 99.5% of Minnesota’s raw sum, but does not imply those individuals reside there; geographic attribution requires additional analysis.</p>
             </div>
-            <p class="cyber-source-note">Source: Patient Protect breach filings, as identified by the hosted MSI dashboard. The headline cards are a captured live-dashboard snapshot. State-level totals may not add up to the overall cards because a source event or organization can appear in multiple states; the hosted counters can also change between visits. Charts and rankings use the state-level values listed in the table. This dashboard is for research and analysis and is not clinical guidance or a binding resource-allocation recommendation.</p>
+            <p class="cyber-source-note">Data source: <a href="https://patient-protect.com/breachdash" target="_blank" rel="noopener">Patient Protect — patient-protect.com/breachdash</a>. Patient Protect&rsquo;s breach dashboard data is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">Creative Commons Attribution 4.0 International (CC BY 4.0)</a> license. The headline cards are a captured dashboard snapshot, and hosted counters can change between visits. State-level totals may not add up to the overall cards because a source event or organization can appear in multiple states. Charts and rankings use the state-level values listed in the table. This dashboard is for research and analysis and is not clinical guidance or a binding resource-allocation recommendation.</p>
           </section>
         </div>
       </main>
@@ -3480,7 +3902,7 @@ footer .foot-bottom{
         })();
       })();
     </script>
-    <script id="cyber-state-data" type="application/json">[{"abbr":"CA","name":"California","rank":1,"filings":135,"groups":116,"orgs":123,"gap":19,"risk":"critical"},{"abbr":"TX","name":"Texas","rank":2,"filings":130,"groups":122,"orgs":125,"gap":8,"risk":"critical"},{"abbr":"FL","name":"Florida","rank":3,"filings":94,"groups":90,"orgs":92,"gap":4,"risk":"critical"},{"abbr":"NY","name":"New York","rank":4,"filings":80,"groups":76,"orgs":76,"gap":4,"risk":"critical"},{"abbr":"IL","name":"Illinois","rank":5,"filings":62,"groups":55,"orgs":59,"gap":7,"risk":"high"},{"abbr":"PA","name":"Pennsylvania","rank":6,"filings":50,"groups":47,"orgs":49,"gap":3,"risk":"high"},{"abbr":"NC","name":"North Carolina","rank":7,"filings":49,"groups":45,"orgs":47,"gap":4,"risk":"high"},{"abbr":"MI","name":"Michigan","rank":8,"filings":47,"groups":42,"orgs":43,"gap":5,"risk":"high"},{"abbr":"TN","name":"Tennessee","rank":9,"filings":43,"groups":37,"orgs":39,"gap":6,"risk":"high"},{"abbr":"GA","name":"Georgia","rank":10,"filings":40,"groups":38,"orgs":40,"gap":2,"risk":"high"},{"abbr":"OH","name":"Ohio","rank":11,"filings":39,"groups":36,"orgs":37,"gap":3,"risk":"elevated"},{"abbr":"MA","name":"Massachusetts","rank":12,"filings":38,"groups":38,"orgs":38,"gap":0,"risk":"elevated"},{"abbr":"MN","name":"Minnesota","rank":13,"filings":35,"groups":31,"orgs":34,"gap":4,"risk":"elevated"},{"abbr":"WA","name":"Washington","rank":13,"filings":35,"groups":35,"orgs":35,"gap":0,"risk":"elevated"},{"abbr":"MO","name":"Missouri","rank":15,"filings":31,"groups":29,"orgs":30,"gap":2,"risk":"elevated"},{"abbr":"IN","name":"Indiana","rank":16,"filings":30,"groups":27,"orgs":29,"gap":3,"risk":"elevated"},{"abbr":"VA","name":"Virginia","rank":16,"filings":30,"groups":25,"orgs":27,"gap":5,"risk":"elevated"},{"abbr":"MD","name":"Maryland","rank":18,"filings":28,"groups":28,"orgs":28,"gap":0,"risk":"elevated"},{"abbr":"NJ","name":"New Jersey","rank":18,"filings":28,"groups":27,"orgs":27,"gap":1,"risk":"elevated"},{"abbr":"CO","name":"Colorado","rank":20,"filings":26,"groups":24,"orgs":25,"gap":2,"risk":"elevated"},{"abbr":"OK","name":"Oklahoma","rank":20,"filings":26,"groups":26,"orgs":26,"gap":0,"risk":"elevated"},{"abbr":"WI","name":"Wisconsin","rank":22,"filings":24,"groups":24,"orgs":24,"gap":0,"risk":"elevated"},{"abbr":"AZ","name":"Arizona","rank":23,"filings":23,"groups":23,"orgs":23,"gap":0,"risk":"elevated"},{"abbr":"CT","name":"Connecticut","rank":24,"filings":21,"groups":18,"orgs":19,"gap":3,"risk":"elevated"},{"abbr":"LA","name":"Louisiana","rank":25,"filings":20,"groups":20,"orgs":20,"gap":0,"risk":"elevated"},{"abbr":"KY","name":"Kentucky","rank":26,"filings":19,"groups":16,"orgs":16,"gap":3,"risk":"moderate"},{"abbr":"SC","name":"South Carolina","rank":27,"filings":18,"groups":18,"orgs":18,"gap":0,"risk":"moderate"},{"abbr":"AR","name":"Arkansas","rank":28,"filings":17,"groups":17,"orgs":17,"gap":0,"risk":"moderate"},{"abbr":"KS","name":"Kansas","rank":28,"filings":17,"groups":17,"orgs":17,"gap":0,"risk":"moderate"},{"abbr":"OR","name":"Oregon","rank":28,"filings":17,"groups":16,"orgs":17,"gap":1,"risk":"moderate"},{"abbr":"AL","name":"Alabama","rank":31,"filings":16,"groups":15,"orgs":15,"gap":1,"risk":"moderate"},{"abbr":"IA","name":"Iowa","rank":32,"filings":15,"groups":13,"orgs":15,"gap":2,"risk":"moderate"},{"abbr":"UT","name":"Utah","rank":32,"filings":15,"groups":13,"orgs":14,"gap":2,"risk":"moderate"},{"abbr":"ME","name":"Maine","rank":34,"filings":14,"groups":14,"orgs":14,"gap":0,"risk":"moderate"},{"abbr":"NE","name":"Nebraska","rank":34,"filings":14,"groups":14,"orgs":14,"gap":0,"risk":"moderate"},{"abbr":"ID","name":"Idaho","rank":36,"filings":11,"groups":11,"orgs":11,"gap":0,"risk":"moderate"},{"abbr":"MS","name":"Mississippi","rank":37,"filings":9,"groups":9,"orgs":9,"gap":0,"risk":"low"},{"abbr":"WV","name":"West Virginia","rank":37,"filings":9,"groups":9,"orgs":9,"gap":0,"risk":"low"},{"abbr":"AK","name":"Alaska","rank":39,"filings":7,"groups":6,"orgs":6,"gap":1,"risk":"low"},{"abbr":"HI","name":"Hawaii","rank":40,"filings":6,"groups":6,"orgs":6,"gap":0,"risk":"low"},{"abbr":"NH","name":"New Hampshire","rank":40,"filings":6,"groups":6,"orgs":6,"gap":0,"risk":"low"},{"abbr":"NV","name":"Nevada","rank":40,"filings":6,"groups":6,"orgs":6,"gap":0,"risk":"low"},{"abbr":"RI","name":"Rhode Island","rank":40,"filings":6,"groups":6,"orgs":6,"gap":0,"risk":"low"},{"abbr":"NM","name":"New Mexico","rank":44,"filings":5,"groups":5,"orgs":5,"gap":0,"risk":"low"},{"abbr":"MT","name":"Montana","rank":45,"filings":4,"groups":4,"orgs":4,"gap":0,"risk":"low"},{"abbr":"ND","name":"North Dakota","rank":46,"filings":3,"groups":3,"orgs":3,"gap":0,"risk":"low"},{"abbr":"DE","name":"Delaware","rank":47,"filings":2,"groups":2,"orgs":2,"gap":0,"risk":"low"},{"abbr":"SD","name":"South Dakota","rank":47,"filings":2,"groups":2,"orgs":2,"gap":0,"risk":"low"},{"abbr":"VT","name":"Vermont","rank":47,"filings":2,"groups":2,"orgs":2,"gap":0,"risk":"low"},{"abbr":"WY","name":"Wyoming","rank":47,"filings":2,"groups":1,"orgs":1,"gap":1,"risk":"low"}]</script>
+    <script id="cyber-state-data" type="application/json">[{"abbr":"CA","name":"California","rank":1,"filings":135,"groups":116,"orgs":123,"gap":19,"risk":"critical"},{"abbr":"TX","name":"Texas","rank":2,"filings":130,"groups":122,"orgs":125,"gap":8,"risk":"critical"},{"abbr":"FL","name":"Florida","rank":3,"filings":94,"groups":90,"orgs":92,"gap":4,"risk":"critical"},{"abbr":"NY","name":"New York","rank":4,"filings":80,"groups":76,"orgs":76,"gap":4,"risk":"critical"},{"abbr":"IL","name":"Illinois","rank":5,"filings":62,"groups":55,"orgs":59,"gap":7,"risk":"high"},{"abbr":"PA","name":"Pennsylvania","rank":6,"filings":50,"groups":47,"orgs":49,"gap":3,"risk":"high"},{"abbr":"NC","name":"North Carolina","rank":7,"filings":49,"groups":45,"orgs":47,"gap":4,"risk":"high"},{"abbr":"MI","name":"Michigan","rank":8,"filings":47,"groups":42,"orgs":43,"gap":5,"risk":"high"},{"abbr":"TN","name":"Tennessee","rank":9,"filings":43,"groups":37,"orgs":39,"gap":6,"risk":"high"},{"abbr":"GA","name":"Georgia","rank":10,"filings":40,"groups":38,"orgs":40,"gap":2,"risk":"high"},{"abbr":"OH","name":"Ohio","rank":11,"filings":39,"groups":36,"orgs":37,"gap":3,"risk":"elevated"},{"abbr":"MA","name":"Massachusetts","rank":12,"filings":38,"groups":38,"orgs":38,"gap":0,"risk":"elevated"},{"abbr":"MN","name":"Minnesota","rank":13,"filings":35,"groups":31,"orgs":34,"gap":4,"risk":"elevated"},{"abbr":"WA","name":"Washington","rank":14,"filings":35,"groups":35,"orgs":35,"gap":0,"risk":"elevated"},{"abbr":"MO","name":"Missouri","rank":15,"filings":31,"groups":29,"orgs":30,"gap":2,"risk":"elevated"},{"abbr":"IN","name":"Indiana","rank":16,"filings":30,"groups":27,"orgs":29,"gap":3,"risk":"elevated"},{"abbr":"VA","name":"Virginia","rank":17,"filings":30,"groups":25,"orgs":27,"gap":5,"risk":"elevated"},{"abbr":"MD","name":"Maryland","rank":18,"filings":28,"groups":28,"orgs":28,"gap":0,"risk":"elevated"},{"abbr":"NJ","name":"New Jersey","rank":19,"filings":28,"groups":27,"orgs":27,"gap":1,"risk":"elevated"},{"abbr":"CO","name":"Colorado","rank":20,"filings":26,"groups":24,"orgs":25,"gap":2,"risk":"elevated"},{"abbr":"OK","name":"Oklahoma","rank":21,"filings":26,"groups":26,"orgs":26,"gap":0,"risk":"elevated"},{"abbr":"WI","name":"Wisconsin","rank":22,"filings":24,"groups":24,"orgs":24,"gap":0,"risk":"elevated"},{"abbr":"AZ","name":"Arizona","rank":23,"filings":23,"groups":23,"orgs":23,"gap":0,"risk":"elevated"},{"abbr":"CT","name":"Connecticut","rank":24,"filings":21,"groups":18,"orgs":19,"gap":3,"risk":"elevated"},{"abbr":"LA","name":"Louisiana","rank":25,"filings":20,"groups":20,"orgs":20,"gap":0,"risk":"elevated"},{"abbr":"KY","name":"Kentucky","rank":26,"filings":19,"groups":16,"orgs":16,"gap":3,"risk":"moderate"},{"abbr":"SC","name":"South Carolina","rank":27,"filings":18,"groups":18,"orgs":18,"gap":0,"risk":"moderate"},{"abbr":"AR","name":"Arkansas","rank":28,"filings":17,"groups":17,"orgs":17,"gap":0,"risk":"moderate"},{"abbr":"KS","name":"Kansas","rank":29,"filings":17,"groups":17,"orgs":17,"gap":0,"risk":"moderate"},{"abbr":"OR","name":"Oregon","rank":30,"filings":17,"groups":16,"orgs":17,"gap":1,"risk":"moderate"},{"abbr":"AL","name":"Alabama","rank":31,"filings":16,"groups":15,"orgs":15,"gap":1,"risk":"moderate"},{"abbr":"IA","name":"Iowa","rank":32,"filings":15,"groups":13,"orgs":15,"gap":2,"risk":"moderate"},{"abbr":"UT","name":"Utah","rank":33,"filings":15,"groups":13,"orgs":14,"gap":2,"risk":"moderate"},{"abbr":"ME","name":"Maine","rank":34,"filings":14,"groups":14,"orgs":14,"gap":0,"risk":"moderate"},{"abbr":"NE","name":"Nebraska","rank":35,"filings":14,"groups":14,"orgs":14,"gap":0,"risk":"moderate"},{"abbr":"ID","name":"Idaho","rank":36,"filings":11,"groups":11,"orgs":11,"gap":0,"risk":"moderate"},{"abbr":"MS","name":"Mississippi","rank":37,"filings":9,"groups":9,"orgs":9,"gap":0,"risk":"low"},{"abbr":"WV","name":"West Virginia","rank":38,"filings":9,"groups":9,"orgs":9,"gap":0,"risk":"low"},{"abbr":"AK","name":"Alaska","rank":39,"filings":7,"groups":6,"orgs":6,"gap":1,"risk":"low"},{"abbr":"HI","name":"Hawaii","rank":40,"filings":6,"groups":6,"orgs":6,"gap":0,"risk":"low"},{"abbr":"NH","name":"New Hampshire","rank":41,"filings":6,"groups":6,"orgs":6,"gap":0,"risk":"low"},{"abbr":"NV","name":"Nevada","rank":42,"filings":6,"groups":6,"orgs":6,"gap":0,"risk":"low"},{"abbr":"RI","name":"Rhode Island","rank":43,"filings":6,"groups":6,"orgs":6,"gap":0,"risk":"low"},{"abbr":"NM","name":"New Mexico","rank":44,"filings":5,"groups":5,"orgs":5,"gap":0,"risk":"low"},{"abbr":"MT","name":"Montana","rank":45,"filings":4,"groups":4,"orgs":4,"gap":0,"risk":"low"},{"abbr":"ND","name":"North Dakota","rank":46,"filings":3,"groups":3,"orgs":3,"gap":0,"risk":"low"},{"abbr":"DE","name":"Delaware","rank":47,"filings":2,"groups":2,"orgs":2,"gap":0,"risk":"low"},{"abbr":"SD","name":"South Dakota","rank":48,"filings":2,"groups":2,"orgs":2,"gap":0,"risk":"low"},{"abbr":"VT","name":"Vermont","rank":49,"filings":2,"groups":2,"orgs":2,"gap":0,"risk":"low"},{"abbr":"WY","name":"Wyoming","rank":50,"filings":2,"groups":1,"orgs":1,"gap":1,"risk":"low"}]</script>
     <script id="cyber-state-shapes" type="application/json">{"AL":"zn,lc;2n,-9;r,2n;e,q;-7,k;a,12;-2t,a;0,6;a,a;-2,f;-j,5;8,-4;-b,-h;-4,h;-a,-1;-9,-1x;3,-3u","AK":"5i,vo;9,-a;-1,5;4,0|57,vz;7,-2;4,-8;8,0;3,6;-h,e;3,-7;-4,5|3o,ws;4,0;-2,4|2g,uf;b,-2;3,9;-5,2|1r,xe;a,-4;-1,-5;8,3|2t,s1;r,-a;3,0;-1,9;j,-1;-a,-b;6,8;1,-9;-d,-4;-e,-m;4,-7;g,-2;c,-h;m,-7;6,-6;6,2;-2,5;5,-4;4,5;b,-1;2,7;d,-2;p,6;9,-5;e,6;t,41;e,-4;i,k;c,-i;18,13;h,2;6,c;-3,b;-8,-f;1,9;-7,-3;-1,-6;-2,6;-2,-9;-2,6;-4,-3;3,-7;-f,-7;-3,-8;4,1;-a,-8;-5,2;-b,-f;8,g;-f,-8;-3,2;a,6;-5,4;-u,-f;1,-8;-5,7;-l,-3;-d,7;4,-5;-7,-5;-7,-1;-7,5;6,-5;-b,-8;-8,6;0,-4;3,i;-3,-3;-8,5;-1,-4;-2,8;-f,8;5,-a;-7,0;3,-f;8,-5;a,2;-8,-4;3,-6;-d,8;-c,m;-9,5;0,6;7,2;-7,c;-11,p;-2,8;-p,7;-3,-4;-4,8;-5,-4;-1,5;-5,-2;0,6;-h,2;4,-7;b,1;g,-e;9,-1;0,5;4,0;0,-8;g,-7;9,-c;7,-l;-a,4;-2,-6;-4,9;-b,-c;-d,7;-1,-q;-f,3;-8,-c;4,-7;-5,-e;f,-k;a,4;6,-6;8,0;3,-4;-4,-a;5,-5;-2,-3;-c,8;-2,-5;-l,-3;-2,-9;4,-2|1x,ss;2,-4;8,4;b,9;-8,4|-u,xf;4,-4;4,3|aa,vu;4,-7;f,d;2,8;-c,-5;5,8|a1,vi;a,-5;6,4;-9,4;-1,9|9p,uw;b,6;-1,e|9o,ve;6,-3;8,i|9e,v7;5,-7;8,1;3,8;-7,-1;-1,5","AZ":"82,mm;b,-4;-1,-8;-6,-5;1,-9;a,-a;3,-h;i,-e;-8,-8;-6,-l;5,-c;2,-17;e,0;7,7;5,-7;7,-10;4x,t;-z,75;-26,-c;-3n,-26","CO":"fe,d6;6l,o;-c,53;-6y,-p","FL":"183,xk;e,-d;9,5|177,v1;5,8;7,1;-8,-1|13i,q2;6,c;2w,-7;3,9;4,-1;1,-l;l,3;d,14;z,1d;4,m;v,1i;4,1f;-4,-2;-2,k;6,-b;0,5;-f,p;6,-e;-s,6;-a,-m;-h,-5;-b,-n;-7,-5;-3,2;-5,-8;4,0;-1,-d;-6,c;-p,-y;4,0;7,-i;-5,3;-7,-7;6,9;-5,9;-6,-b;-3,-f;4,7;2,-i;-3,-l;-6,-a;-a,2;-t,-w;-f,-7;-9,2;-2,9;-t,c;4,4;c,-8;-d,a;-c,-2;-4,-d;-x,-f;-l,0;-u,8;6,-7;-3,-b;-9,-8;0,-6","GA":"12a,l3;2k,-c;-7,g;j,8;f,l;1a,11;k,12;b,2;-b,g;0,o;-6,b;3,0;0,c;-k,-2;-1,l;-4,1;-3,-9;-2y,5;-9,-i;-5,-u;7,-k;-e,-q","IN":"zl,cs;9,3;e,-8;1v,-7;c,3f;4,8;0,4;-c,6;-9,-1;1,8;-d,e;-6,g;-c,-a;-7,g;-a,-5;-8,a;-i,-7;0,7;-a,-4;-1,7;-6,-5;3,-e;f,-s;-7,-h;3,-9","KS":"lw,f4;6g,6;d,5;2,8;-8,9;a,e;8,3;1,2r;-7f,-7","ME":"1g4,6g;0,-3;4,2|1fr,6m;2,-4;4,5|1ek,8c;-d,-d;-p,-2a;8,1;-1,-7;6,-1;-5,-5;a,-l;-5,-d;3,-o;e,-14;6,0;7,a;k,-d;e,7;i,1p;c,0;3,e;7,5;5,-3;a,e;-4,9;-7,0;-3,c;-6,-2;-6,c;-5,-2;1,7;-6,1;-2,-8;-5,4;4,h;-d,-k;-5,5;3,l;-6,7;-4,-3;-1,6;-j,c","MA":"1fj,ae;8,-5;3,3|1f1,ah;6,-8;5,1;1,3|1ce,9b;1s,-e;d,-b;3,7;7,0;-8,7;-1,d;a,1;d,h;f,-5;-6,-a;-5,0;6,-1;9,i;-d,3;-h,f;8,-8;-1,-7;-d,d;-f,-l;-1x,g","MN":"qn,3x;1r,1;-1,-i;6,1;a,s;o,5;2,5;o,-6;b,3;-2,4;6,0;5,b;3,-7;6,0;g,d;k,-a;4,7;13,1;-11,k;-14,14;2,3;-8,3;1,q;-i,h;0,7;8,5;-4,w;1a,w;8,n;-4s,3;1,-29;-d,-e;9,-a;1,-c;-8,-q;-1,-16;-9,-q","NJ":"1b6,do;n,-u;-l,-k;3,-a;-4,-4;7,-g;4,-4;u,a;-7,p;a,0;3,w;-h,16;-4,1;1,-a;-9,1;-g,-a","NC":"1bz,jf;f,-d;-5,-m;6,o|15z,ik;5r,-10;j,v;-n,-t;b,j;-6,-7;1,3;-b,-3;6,5;-f,2;7,2;-a,7;-6,-c;4,f;l,-7;4,f;4,-g;7,f;-c,h;-c,0;-5,-5;4,-3;-6,3;3,5;-h,-2;m,7;-9,g;-7,-1;9,3;9,-9;7,1;-5,h;-5,-4;-1,3;6,2;e,-m;-e,p;-6,-4;-c,4;-i,g;-9,r;-l,4;-1e,-z;-15,6;0,-5;-7,-7;-3,3;-1,-5;-1e,5;-o,d;-19,7;0,-b;a,-5;3,-a;v,-g;b,-f;4,4;8,-9;9,-1;4,-9;6,-2","ND":"ky,3n;5p,a;j,3v;-6k,-b","OK":"kp,iv;3y,7;4f,2;8,21;-1,28;-s,-e;-2,4;-v,1;-9,8;-9,-a;-6,3;-9,-6;-7,a;-1,-8;-8,4;-a,-8;-7,7;-9,-f;-e,4;-q,-7;-6,-c;-1,4;-b,-1;-b,-8;4,-2h;-31,-6","PA":"160,bm;n,-h;2,c;41,-t;b,7;6,e;b,3;-b,k;4,4;-3,a;l,k;-b,f;-k,c;-4h,v","SD":"ki,8n;4,-16;6k,b;-9,f;d,e;-1,29;-5,0;6,i;-7,g;6,d;-p,-h;-k,-1;-7,4;-f,-b;-53,-a","TX":"kn,ji;31,6;-4,2h;b,8;b,1;1,-4;6,c;q,7;e,-4;5,c;4,3;9,-6;a,7;6,-4;4,9;4,-b;9,6;6,-3;9,a;9,-8;v,-1;2,-4;x,j;c,-1;1,1z;9,a;-1,8;d,q;-8,m;2,m;-8,b;3,6;-11,f;b,-7;-b,0;1,-c;-8,4;3,i;-b,9;h,-a;-2i,1s;-g,12;8,18;-8,-l;1,-10;b,-p;q,-n;-9,5;-4,-4;-6,d;-5,-3;-7,4;8,-1;-7,d;-c,-3;9,9;-6,h;-4,2;0,-4;-5,5;8,-1;-1,u;c,t;-a,5;-b,-8;-o,-3;-y,-f;-e,-t;-2,-p;-e,-b;-2,-8;-e,-e;-e,-13;-r,-u;-10,-8;-2,5;-c,1;-9,l;-a,b;-d,-3;-12,-t;-e,-1b;-h,-d;-16,-1d;0,-8;3s,d","WY":"ki,8n;-f,52;-6k,-t;t,-50","CT":"1ce,a8;1j,-d;7,v;-z,b;-l,k;-3,-5;6,-7","MO":"rw,ek;3y,-2;7,7;-3,c;6,i;n,l;4,f;4,2;3,-5;c,5;-7,t;w,n;6,t;b,3;-4,i;-5,-2;-2,7;-5,-3;2,c;-6,2;4,5;-3,6;-p,2;a,-d;-3,-b;-4h,7;-1,-3e;-8,-3;-a,-e;8,-9;-2,-8;-h,-6","WV":"14q,ge;a,-3;7,-s;5,6;4,-2;1,-h;7,-7;7,0;b,-d;4,-x;-4,-b;4,-4;7,16;10,-6;3,n;b,-e;6,0;3,-a;d,4;8,-a;d,2;6,c;-2,9;-l,-c;1,e;-d,l;-5,-3;-7,m;-d,-6;-g,18;1,9;-j,6;-1,6;-a,5;-6,-4;-a,8;-b,-7;0,-6;-e,-5;-g,-l","IL":"w1,ep;0,-7;9,-6;5,-c;-6,-f;2,-7;k,-7;8,-d;0,-e;-h,-h;2m,-6;0,9;d,q;9,2z;-3,9;7,h;-f,s;-4,p;3,9;-e,5;2,e;-h,-6;-8,7;1,5;-9,-2;-6,-t;-w,-n;7,-t;-c,-5;-5,5;-6,-h;-n,-l;-6,-i","NM":"ep,i8;60,n;-j,6c;-3s,-d;3,a;-1t,-8;-2,l;-w,-4","AR":"t2,jr;4h,-7;3,b;-a,d;o,-2;3,4;-a,9;1,a;-4,-1;0,6;-4,0;4,c;-8,5;2,6;-8,2;-3,m;-c,9;4,2;-5,2;3,5;-8,3;5,8;-6,3;4,2;-7,1;4,3;-4,7;7,1;-3,j;-31,3;0,-o;-h,-4;1,-28","CA":"35,jq;e,6;-8,1|2t,jq;7,1;2,5;-6,0|1t,8w;3s,12;-y,3p;43,65;4,r;8,8;-i,e;-3,h;-9,5;-2,e;7,b;-3,6;-2r,-b;-6,-12;-h,-n;-c,-3;-1,-e;-l,-9;-c,-h;-w,-a;-5,-8;7,-p;-7,-5;1,-b;-b,-d;-d,-z;0,-c;6,-2;2,-d;-8,-3;-7,-d;4,-r;4,-1;-2,a;a,a;-7,-r;6,-5;-7,-2;-5,d;-e,-d;5,-b;-h,-10;8,-16;-b,-o;1,-8;h,-n","DE":"1ay,dl;c,-6;-3,g;f,m;9,4;4,g;-m,4","HI":"gz,wh;9,-b;-1,-d;p,c;k,o;-t,f;-7,a;-b,-9;1,-a|g7,v0;5,-5;5,6;a,-2;b,a;-h,6;-4,-9|fs,v1;b,4;-7,3|fh,us;2,-6;o,3;-7,5|ec,u6;d,-6;e,j;-k,0|ck,tl;a,-9;b,4;-6,d|c1,tt;7,-7;-6,a","IA":"r9,au;4s,-3;5,a;-3,6;5,i;b,4;k,n;0,e;-8,d;-k,7;-2,7;6,f;-5,c;-9,6;0,7;-b,-a;-3u,5;-c,-1s;-h,-x;7,-j;-6,-i","KY":"yi,iw;4,-c;k,6;-2,-e;e,-5;-3,-9;8,-d;a,4;0,-7;i,7;b,-a;7,5;7,-g;c,a;6,-g;d,-e;-1,-8;l,-5;-4,-c;4,-5;a,0;b,e;k,5;4,-4;9,4;d,-9;3,7;9,4;0,e;7,a;9,b;c,4;-10,16;-j,a;-4d,d;1,8;-1d,4;8,-9","MD":"1b3,fn;0,-4;3,5|17h,ea;3h,-p;f,1k;m,-4;-2,k;-m,a;-3,-k;-8,7;-9,-a;2,-7;8,2;-a,-6;-2,3;2,-c;-5,5;1,-a;5,1;-5,-5;7,-c;-1,-9;-7,b;-1,-4;0,7;-3,-4;-1,a;-6,-2;9,9;-4,d;g,u;-m,-a;2,5;-4,-2;-4,-6;-8,5;7,-q;-k,-4;-2,-7;-b,-3;-4,-b;-d,-2;-c,a;-9,-4;-3,a;-6,0;-b,e","MI":"11m,7a;a,3;-4,2|10t,7p;3,-7;1,6|108,cn;g,-z;-1,-k;-e,-v;3,-9;-4,-a;a,-14;8,-3;8,-d;-2,i;2,2;3,-a;-1,b;3,-o;d,-7;-7,-7;2,-9;8,-3;16,f;a,e;-6,0;7,e;1,h;-g,l;-1,8;a,6;7,-g;f,-9;6,3;h,18;-1,i;-5,4;1,-7;-5,2;-g,18|xf,55;o,-g;-e,e|wj,6u;17,-m;n,-n;c,-2;3,3;-8,2;-d,k;0,9;9,-a;-4,6;c,-4;i,h;i,1;k,-d;10,-8;0,d;d,2;e,-7;2,d;-4,3;d,7;1,-5;6,-1;5,5;-s,6;-9,-5;-2,a;-9,-6;-g,-2;-5,6;-i,3;-9,g;-4,-3;5,-a;-8,2;-4,8;-3,-6;-f,z;-5,-3;0,-a;-5,1;1,-e;-a,-4;-1,-6;-1s,-e","MS":"wr,o2;3,-j;-7,-1;4,-7;-4,-3;7,-1;-4,-2;6,-3;-5,-8;8,-3;-3,-5;5,-2;-4,-2;c,-9;3,-m;8,-2;-2,-4;25,-5;4,4;-3,3u;9,1x;-z,6;-1,-4;-9,a;-d,-l;4,-g;-22,4;-1,-c;5,0;-2,-6;4,1;-2,-7;4,-2;-5,-2;h,-j;-4,-2;6,-5;-6,-1;a,-7;-9,-6;5,-1;-2,-7;-5,1;4,-4;-4,-1;3,-7;-1,-4;-5,3","MT":"b0,26;4t,w;55,l;-f,50;-67,-r;-4,o;-9,-f;-5,9;-p,-5;-4,5;-c,-4;-3,5;-6,-k;-9,-6;-5,-z;-5,-6;-d,9;-6,-6;h,-1a;-d,-5;-c,-t;-b,-a;3,-1;0,-b;-7,-e","NH":"1d8,65;0,-a;a,-6;p,2a;d,d;-1,a;-d,b;-12,9;-5,-7;-2,-v;5,-q;-2,-a;c,-c","NY":"16n,b5;q,-t;-b,-k;i,-9;w,1;n,-8;g,-g;-5,-b;5,-4;-a,-4;1,-8;r,-11;c,-a;1a,-a;d,1r;3,-2;3,4;8,y;-1,v;a,13;-6,7;3,5;-4,7;12,-g;b,-b;-2,4;8,3;7,-6;-z,s;-s,d;-5,-6;2,-f;-15,-d;-6,-e;-b,-7;-41,t","OH":"124,cj;19,-8;y,c;o,-9;d,-e;o,-e;a,1o;-4,4;4,b;-4,x;-b,d;-7,0;-7,7;-1,h;-c,-1;-4,p;-a,3;-c,-e;-d,9;-9,-4;-4,4;-k,-5;-b,-e;-c,3","OR":"3y,3w;h,e;-1,k;c,8;i,-2;e,4;4,5;i,-1;7,4;1a,-2;1s,f;9,d;1,7;-10,1c;8,e;-7,e;-i,28;-3n,-v;-2w,-x;3,-11;p,-13;q,-1q;b,-15;3,4","TN":"y0,k6;4,-6;-4,-5;6,-2;-1,-a;1i,-4;-1,-8;3i,-9;2w,-f;-1,d;-6,2;-4,9;-9,1;-8,9;-4,-4;-b,f;-v,g;-3,a;-a,5;0,b;-63,j;8,-7;-4,-c;4,0;0,-6;4,1;-1,-a;a,-9","UT":"az,b6;2r,h;-7,19;1v,a;-p,52;-4x,-t","VA":"1bj,fs;e,-7;-h,1b;-3,-f|15i,he;d,e;1a,-l;-1,-9;g,-18;d,6;7,-m;5,3;d,-l;-1,-e;l,c;2,-9;5,-1;3,8;i,7;-2,r;7,-5;5,8;c,1;g,9;-2,d;-m,-e;g,f;9,1;3,b;-6,-3;4,5;-5,2;8,4;1,6;-3,2;-b,-9;-b,1;a,0;a,c;g,-5;9,g;-4d,u;-3d,f;i,-9","WA":"56,2u;4,-6;1,6|5a,1q;7,-7;2,6;-7,2;2,a;3,-3;2,4;-2,5|52,16;6,4;4,-6;4,4;-5,9|a7,20;-r,38;1,h;-1s,-f;-1a,2;-7,-4;-i,1;-4,-5;-e,-4;-i,2;-c,-8;2,-e;-6,-c;-s,-d;5,-f;0,c;8,-e;-7,-4;1,-7;8,1;-6,-7;-3,5;3,-1w;j,g;o,7;6,a;5,-5;2,c;-n,i;7,1;-6,-2;o,-h;-8,r;-3,2;-2,-6;-2,9;0,-a;-3,3;4,8;7,-8;6,1;1,-e;a,-d;-2,-c;-1,8;-4,-5;6,-7;-7,-8;7,1;3,-5;-1,-9;-5,1;1,-c","WI":"v4,6q;11,-d;2,3;-5,e;6,-5;h,7;4,8;1s,e;1,6;a,4;-1,e;5,-1;0,a;5,3;-7,7;-4,j;i,-g;4,-e;7,-7;-i,1v;-3,t;6,y;-2m,6;-3,-6;-b,-4;-5,-i;3,-6;-5,-4;-3,-m;-m,-l;-t,-i;4,-w;-8,-5;0,-7;i,-h;-1,-q","NE":"kb,b6;53,a;f,b;7,-4;h,0;g,8;7,9;7,1;2,f;9,g;-1,c;7,a;0,r;k,x;-6g,-6;3,-1a;-1w,-5","SC":"14u,kr;o,-d;1e,-5;1,5;3,-3;7,7;0,5;15,-6;1e,z;-d,c;-b,w;-8,1;-d,l;-h,8;2,8;-9,1;2,5;-8,9;-8,-2;-6,-f;-9,-7;-5,-g;-1a,-11;-f,-l;-j,-8","ID":"9h,5p;-1,-h;r,-38;t,6;-9,19;7,e;0,b;-3,1;b,a;c,t;d,5;-h,1a;6,6;d,-9;5,6;5,z;9,6;6,k;3,-5;c,4;4,-5;p,5;5,-9;9,f;-i,33;-5g,-12;i,-28;7,-e;-8,-e;10,-1c","NV":"5l,9y;5e,18;-1e,79;-5,7;-7,-7;-e,0;-5,1d;-43,-65","VT":"1bn,6k;1l,-f;4,n;-c,c;2,a;-5,q;2,v;5,7;-r,3;-7,-w;-3,-4;-3,2","LA":"yx,ro;6,-5;-1,7|w1,sf;c,1;-5,4|tq,o5;31,-3;1,5;2,-4;-2,g;5,-1;2,7;-5,1;9,6;-a,7;6,1;-6,5;4,2;-h,j;5,2;-4,2;2,7;-4,-1;2,6;-5,0;1,c;22,-4;-4,g;f,l;-d,9;7,5;7,-a;5,8;6,-4;-6,7;3,3;-e,a;8,8;j,6;-4,b;-4,-4;-6,7;4,-c;-5,3;-h,-7;-f,b;-9,-b;-g,e;-4,-5;-d,-3;0,-5;6,5;0,-4;-9,-2;-1,-6;-4,2;-7,-b;-a,1;2,-5;-e,4;6,7;-b,3;-y,-a;-q,5;-3,-6;8,-b;-2,-m;8,-m;-d,-q;1,-8;-9,-a","RI":"1el,a6;5,7;-5,-5;-3,9|1e3,ar;-5,-v;d,-4;9,e;-7,-4;2,j"}</script>
     <script>
       (function () {
@@ -3520,6 +3942,42 @@ footer .foot-bottom{
         };
         const discrepancyChartStates = ["CA", "IL", "MI", "FL", "NC", "PA", "IN", "KY"];
         const rankByFilings = [...states].sort((a, b) => b.filings - a.filings || a.name.localeCompare(b.name));
+        const stateCount = document.getElementById("cyber-state-count");
+        const homeStateCount = document.getElementById("cyber-home-state-count");
+        if (stateCount) stateCount.textContent = states.length.toLocaleString();
+        if (homeStateCount) homeStateCount.textContent = states.length.toLocaleString();
+
+        function renderHomeCyberPreview() {
+          const host = document.getElementById("cyber-home-bars");
+          if (!host) return;
+          host.replaceChildren();
+          const maxFilings = rankByFilings[0] ? rankByFilings[0].filings : 1;
+          rankByFilings.slice(0, 5).forEach((state) => {
+            const row = document.createElement("div");
+            row.className = "cyber-home-bar-row";
+            row.setAttribute("role", "listitem");
+
+            const label = document.createElement("span");
+            label.className = "cyber-home-state";
+            label.textContent = state.abbr;
+
+            const track = document.createElement("div");
+            track.className = "cyber-home-bar-track";
+            track.setAttribute("aria-hidden", "true");
+
+            const bar = document.createElement("span");
+            bar.className = "cyber-home-bar-fill";
+            bar.style.width = `${(state.filings / maxFilings) * 100}%`;
+            track.appendChild(bar);
+
+            const value = document.createElement("strong");
+            value.className = "cyber-home-bar-value";
+            value.textContent = state.filings.toLocaleString();
+
+            row.append(label, track, value);
+            host.appendChild(row);
+          });
+        }
         const stateByAbbr = Object.fromEntries(states.map((state) => [state.abbr, state]));
         let selectedState = "CA";
         let sortKey = "rank";
@@ -3881,6 +4339,7 @@ footer .foot-bottom{
           renderTable();
           if (!tableExpanded) document.getElementById("cyber-table-scroll").scrollIntoView({ behavior: "smooth", block: "nearest" });
         });
+        renderHomeCyberPreview();
         renderStateMap();
         renderTopFlags();
         renderFilingsChart();
@@ -3890,6 +4349,44 @@ footer .foot-bottom{
         selectState(selectedState);
       })();
     </script>
+<!-- ============================================================
+     ALAMEDA LIFELINE — standalone interactive app page. The app
+     runs inside a phone frame using the original files from the
+     /alameda-lifeline folder. Keep that folder beside this HTML.
+     ============================================================ -->
+<section id="alameda-lifeline-page" class="alameda-lifeline-page" style="display:none;" aria-labelledby="alameda-lifeline-title">
+  <header class="alameda-page-heading">
+    <h1 id="alameda-lifeline-title">Alameda Lifeline</h1>
+    <p>Preview the MSI's new app covering the opioid crisis in Alameda County. Alameda Lifeline - Making resources accessible for Alameda Youth amidst the opioid crisis</p>
+    <div class="alameda-launch-status">Interactive preview · Public launch in development</div>
+  </header>
+
+  <div class="alameda-phone-frame" role="group" aria-label="iPhone 13-style preview of the Alameda Lifeline app">
+    <div class="alameda-phone-screen">
+      <div class="alameda-phone-status" aria-hidden="true">
+        <span>9:41</span>
+        <div class="alameda-phone-status-icons">
+          <svg viewBox="0 0 18 13" fill="currentColor"><path d="M1 12V9.5h2V12H1Zm3 0V7h2v5H4Zm3 0V4.5h2V12H7Zm3 0V2h2v10h-2Zm3 0V.5h2V12h-2Z"/></svg>
+          <svg viewBox="0 0 18 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M1 4.5C5.5.7 12.5.7 17 4.5M4 7.5c3-2.5 7-2.5 10 0M7 10.2c1.2-1 2.8-1 4 0"/></svg>
+          <svg viewBox="0 0 22 13" fill="none"><rect x=".8" y="1.3" width="18" height="10" rx="2" stroke="currentColor" stroke-width="1.4"/><rect x="2.5" y="3" width="13" height="6.6" rx=".8" fill="currentColor"/><path d="M20 4.2v4.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+
+      <iframe
+        class="alameda-phone-app"
+        src="./alameda-lifeline/index.html"
+        title="Interactive Alameda Lifeline app preview"
+        loading="eager"
+        allow="fullscreen"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+
+    </div>
+  </div>
+
+  <p class="alameda-phone-caption">Submitted to the 2026 Congressional App Challenge in California’s 10th Congressional District, under Congressman Mark DeSaulnier.</p>
+</section>
+
 <section id="data-methodology-page" class="section" style="display:none;">
   <div class="section-wrap">
     <div class="section-heading">
@@ -5653,7 +6150,8 @@ window.addEventListener('resize', function() {
     'about-us': document.getElementById('about-us'),
     'faqs-page': document.getElementById('faqs-page'),
     'briefs-page': document.getElementById('briefs-page'),
-    'cybersecurity': document.getElementById('cybersecurity-page')
+    'cybersecurity': document.getElementById('cybersecurity-page'),
+    'alameda-lifeline-page': document.getElementById('alameda-lifeline-page')
   };
 
   function closeMobileNav() {
@@ -5721,6 +6219,9 @@ window.addEventListener('resize', function() {
   // Map each trigger button's id to the sub-page it should open.
   var pageButtonMap = {
     'nav-cybersecurity-btn': 'cybersecurity',
+    'nav-alameda-lifeline-btn': 'alameda-lifeline-page',
+    'cyber-live-threats-btn': 'cybersecurity',
+    'cyber-graph-live-threats-btn': 'cybersecurity',
     'nav-methodology-btn': 'data-methodology',
     'footer-methodology-btn': 'data-methodology',
     'method-learnmore-btn': 'data-methodology',
